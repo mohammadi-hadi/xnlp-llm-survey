@@ -2,7 +2,8 @@
 
 # Explainable NLP in the Era of Large Language Models
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18521290.svg)](https://doi.org/10.5281/zenodo.18521290)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21899962.svg)](https://doi.org/10.5281/zenodo.21899962)
+[![Preprint](https://img.shields.io/badge/Preprint-10.5281%2Fzenodo.18521290-blue.svg)](https://doi.org/10.5281/zenodo.18521290)
 [![Venue](https://img.shields.io/badge/JAIR-under%20review-blue.svg)](https://www.jair.org/)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
@@ -19,6 +20,7 @@
 | **Affiliation**  | Department of Methodology and Statistics, Utrecht University, The Netherlands |
 | **Venue**        | Journal of Artificial Intelligence Research (under review, submitted August 2026) |
 | **Preprint**     | [10.5281/zenodo.18521290](https://doi.org/10.5281/zenodo.18521290) (earlier and shorter version, Zenodo) |
+| **Materials archive** | [10.5281/zenodo.21899962](https://doi.org/10.5281/zenodo.21899962) (this repository) |
 
 The accepted version of the manuscript and its LaTeX source will be added here on publication.
 
@@ -99,7 +101,21 @@ Until the journal version appears, please cite the Zenodo preprint:
 }
 ```
 
-GitHub's "Cite this repository" button uses [`CITATION.cff`](CITATION.cff) and points at the same record.
+If you use the materials in this repository (figures, taxonomy, bibliography), cite its archive as well:
+
+```bibtex
+@software{mohammadi2026xnlpmaterials,
+  author    = {Mohammadi, Hadi and Shahedi, Tina},
+  title     = {Explainable {NLP} in the Era of Large Language Models: Survey Materials},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1.0.0},
+  doi       = {10.5281/zenodo.21899962},
+  url       = {https://doi.org/10.5281/zenodo.21899962}
+}
+```
+
+GitHub's "Cite this repository" button uses [`CITATION.cff`](CITATION.cff).
 
 ## Related Repository
 

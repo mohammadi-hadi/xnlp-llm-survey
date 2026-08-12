@@ -2,6 +2,12 @@ cff-version: 1.2.0
 message: "If you use these materials, please cite the survey (see preferred-citation)."
 title: "Explainable NLP in the Era of Large Language Models: Survey Materials"
 type: software
+version: "v1.0.0"
+date-released: "2026-08-12"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21899962
+    description: Zenodo concept DOI (all versions) for the archived repository
 license: CC-BY-4.0
 repository-code: "https://github.com/mohammadi-hadi/xnlp-llm-survey"
 authors:
