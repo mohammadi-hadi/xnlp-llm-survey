@@ -1,0 +1,49 @@
+{
+  "name": "A unified taxonomy of explanation methods for NLP",
+  "source": "Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance (Mohammadi and Shahedi, Utrecht University; under review at the Journal of Artificial Intelligence Research)",
+  "preprint_doi": "10.5281/zenodo.18521290",
+  "dimensions": [
+    {
+      "name": "scope",
+      "question": "What does the explanation cover?",
+      "values": [
+        {"value": "local", "description": "Explains a single prediction"},
+        {"value": "global", "description": "Characterizes model-wide behavior"}
+      ]
+    },
+    {
+      "name": "mechanism",
+      "question": "How is the explanation computed?",
+      "values": [
+        {"value": "perturbation", "description": "Query the model with modified inputs (occlusion, erasure, sampling-based feature removal, counterfactual search) and read importance off the resulting output changes"},
+        {"value": "gradient/propagation", "description": "Backpropagate signals from the output through the model's weights, as in vanilla gradients, Integrated Gradients, or Layer-wise Relevance Propagation"},
+        {"value": "surrogate", "description": "Fit an interpretable proxy model, either locally around one prediction (as in LIME) or globally via distillation"},
+        {"value": "internal inspection", "description": "Read internal states such as attention weights, hidden representations, probe outputs, or learned dictionary features without modifying the model"},
+        {"value": "intervention", "description": "Ablate or patch model components and measure the behavioral consequences, as in head pruning, layer ablation, and activation patching"},
+        {"value": "prompting-based", "description": "Elicit an explanation from the model itself in natural language, as in chain-of-thought prompting and self-explanation"},
+        {"value": "intrinsic", "description": "Build the explanation into the model itself, so that it is a by-product of the forward computation, as in select-then-predict rationale architectures, concept bottleneck models, and weight-sparse transformers"}
+      ]
+    },
+    {
+      "name": "model access",
+      "question": "What does the method need from the model?",
+      "values": [
+        {"value": "model-agnostic", "description": "Works with any model"},
+        {"value": "model-specific", "description": "Designed for particular architectures"}
+      ]
+    },
+    {
+      "name": "output form",
+      "question": "What does the explanation look like?",
+      "values": [
+        {"value": "importance scores", "description": "A weight per input feature or token"},
+        {"value": "rules", "description": "Symbolic conditions describing model behavior"},
+        {"value": "examples", "description": "Influential or similar training instances"},
+        {"value": "counterfactuals", "description": "Minimal input changes that flip the output"},
+        {"value": "rationale spans", "description": "A hard selection of the input designated as evidence"},
+        {"value": "concepts", "description": "Concept-level abstractions above individual features"},
+        {"value": "natural language", "description": "Free-text explanations"}
+      ]
+    }
+  ]
+}

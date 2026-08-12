@@ -1,0 +1,2455 @@
+% ============================================================================
+% References: Explainable NLP survey
+% Every entry verified against authoritative sources (ACL Anthology / DBLP /
+% publisher / arXiv), July 2026. New entries must be verified the same way
+% before merging (see SUBMISSION_STEPS.md).
+% Note: the entry now keyed zhang2001text was formerly keyed yan2009linear. The
+% work originally cited under that key did not exist and was replaced by Zhang &
+% Oles (2001); the key was renamed on 2026-08-08 so that it matches the work it
+% actually cites.
+% Re-verification pass 2026-08-05 covered 173 entries. The file has since grown
+% (see the count below); entries added after that date are marked and still need
+% the same treatment before submission. Of the 173: 83 DOIs resolved
+% through Crossref, 30 arXiv identifiers resolved on arxiv.org, 40 ACL Anthology
+% entries diffed field-by-field against the official BibTeX, and the
+% ICLR/ICML/NeurIPS/TMLR venue claims confirmed through OpenReview. Changes:
+%   - shu2025survey        completed with pages, address and DOI (Findings EMNLP 2025)
+%   - arcuschin2025chain   preprint promoted to ICML 2026 (PMLR)
+%   - mohammadi2025reliability  DOI added
+%   - mohammadi2025evalmoraal   address aligned with the Anthology record
+%   - kim2018interpretability  pages corrected to 2673--2682 (PMLR v80 via DBLP;
+%                              the previous 2668--2677 did not match the record)
+% ============================================================================
+
+% ===================== ORIGINAL (VERIFIED/CORRECTED) =====================
+
+@article{adadi2018peeking,
+  title={Peeking inside the black-box: A survey on explainable artificial intelligence ({XAI})},
+  author={Adadi, Amina and Berrada, Mohammed},
+  journal={IEEE Access},
+  volume={6},
+  pages={52138--52160},
+  year={2018},
+  publisher={IEEE},
+  doi={10.1109/ACCESS.2018.2870052}
+}
+
+@article{arrieta2020explainable,
+  title={Explainable Artificial Intelligence ({XAI}): Concepts, taxonomies, opportunities and challenges toward responsible {AI}},
+  author={Barredo Arrieta, Alejandro and D{\'i}az-Rodr{\'i}guez, Natalia and Del Ser, Javier and Bennetot, Adrien and Tabik, Siham and Barbado, Alberto and Garc{\'i}a, Salvador and Gil-L{\'o}pez, Sergio and Molina, Daniel and Benjamins, Richard and Chatila, Raja and Herrera, Francisco},
+  journal={Information Fusion},
+  volume={58},
+  pages={82--115},
+  year={2020},
+  publisher={Elsevier},
+  doi={10.1016/j.inffus.2019.12.012}
+}
+
+@misc{gohel2021explainable,
+  title={Explainable {AI}: current status and future directions},
+  author={Gohel, Prashant and Singh, Priyanka and Mohanty, Manoranjan},
+  year={2021},
+  eprint={2107.07045},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG},
+  url={https://arxiv.org/abs/2107.07045}
+}
+
+@article{rudin2019stop,
+  title={Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead},
+  author={Rudin, Cynthia},
+  journal={Nature Machine Intelligence},
+  volume={1},
+  number={5},
+  pages={206--215},
+  year={2019},
+  publisher={Nature Publishing Group},
+  doi={10.1038/s42256-019-0048-x}
+}
+
+@inproceedings{danilevsky2020survey,
+  title={A Survey of the State of Explainable {AI} for Natural Language Processing},
+  author={Danilevsky, Marina and Qian, Kun and Aharonov, Ranit and Katsis, Yannis and Kawas, Ban and Sen, Prithviraj},
+  booktitle={Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing},
+  pages={447--459},
+  year={2020},
+  address={Suzhou, China},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/2020.aacl-main.46},
+  url={https://aclanthology.org/2020.aacl-main.46/}
+}
+
+@article{madsen2022posthoc,
+  title={Post-hoc Interpretability for Neural {NLP}: A Survey},
+  author={Madsen, Andreas and Reddy, Siva and Chandar, Sarath},
+  journal={ACM Computing Surveys},
+  volume={55},
+  number={8},
+  pages={155:1--155:42},
+  year={2022},
+  publisher={ACM},
+  doi={10.1145/3546577}
+}
+
+@inproceedings{mathews2019explainable,
+  title={Explainable Artificial Intelligence Applications in {NLP}, Biomedical, and Malware Classification: A Literature Review},
+  author={Mathews, Sherin Mary},
+  booktitle={Intelligent Computing: Proceedings of the 2019 Computing Conference, Volume 2},
+  address = {Cham, Switzerland},
+  series={Advances in Intelligent Systems and Computing},
+  volume={998},
+  pages={1269--1292},
+  year={2019},
+  publisher={Springer},
+  doi={10.1007/978-3-030-22868-2_90}
+}
+
+@inproceedings{ribeiro2016should,
+  title={``{W}hy should {I} trust you?'': Explaining the predictions of any classifier},
+  author={Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
+  booktitle={Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={1135--1144},
+  year={2016},
+  doi={10.1145/2939672.2939778}
+}
+
+@inproceedings{ribeiro2018anchors,
+  title={Anchors: High-precision model-agnostic explanations},
+  author={Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  address = {New Orleans, Louisiana, USA},
+  publisher = {AAAI Press},
+  volume={32},
+  pages={1527--1535},
+  year={2018},
+  doi={10.1609/aaai.v32i1.11491}
+}
+
+@inproceedings{lundberg2017unified,
+  title={A unified approach to interpreting model predictions},
+  author={Lundberg, Scott M and Lee, Su-In},
+  booktitle={Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume={30},
+  year={2017},
+  publisher={Curran Associates, Inc.}
+}
+
+@article{lundberg2020local,
+  title={From local explanations to global understanding with explainable {AI} for trees},
+  author={Lundberg, Scott M and Erion, Gabriel and Chen, Hugh and DeGrave, Alex and Prutkin, Jordan M and Nair, Bala and Katz, Ronit and Himmelfarb, Jonathan and Bansal, Nisha and Lee, Su-In},
+  journal={Nature Machine Intelligence},
+  volume={2},
+  number={1},
+  pages={56--67},
+  year={2020},
+  publisher={Nature Publishing Group},
+  doi={10.1038/s42256-019-0138-9}
+}
+
+@misc{karpathy2015visualizing,
+  title={Visualizing and Understanding Recurrent Networks},
+  author={Karpathy, Andrej and Johnson, Justin and Fei-Fei, Li},
+  year={2015},
+  eprint={1506.02078},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG},
+  url={https://arxiv.org/abs/1506.02078},
+  note={{ICLR} 2016 workshop track (non-archival)}
+}
+
+@misc{simonyan2013deep,
+  title={Deep inside convolutional networks: Visualising image classification models and saliency maps},
+  author={Simonyan, Karen and Vedaldi, Andrea and Zisserman, Andrew},
+  year={2013},
+  eprint={1312.6034},
+  archiveprefix={arXiv},
+  primaryclass={cs.CV},
+  url={https://arxiv.org/abs/1312.6034}
+}
+
+@inproceedings{sundararajan2017axiomatic,
+  title={Axiomatic attribution for deep networks},
+  author={Sundararajan, Mukund and Taly, Ankur and Yan, Qiqi},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
+  address = {Sydney, NSW, Australia},
+  series={Proceedings of Machine Learning Research},
+  volume={70},
+  pages={3319--3328},
+  year={2017},
+  publisher={PMLR}
+}
+
+@misc{smilkov2017smoothgrad,
+  title={{SmoothGrad}: removing noise by adding noise},
+  author={Smilkov, Daniel and Thorat, Nikhil and Kim, Been and Vi{\'e}gas, Fernanda and Wattenberg, Martin},
+  year={2017},
+  eprint={1706.03825},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG},
+  url={https://arxiv.org/abs/1706.03825}
+}
+
+@article{bach2015pixel,
+  title={On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation},
+  author={Bach, Sebastian and Binder, Alexander and Montavon, Gr{\'e}goire and Klauschen, Frederick and M{\"u}ller, Klaus-Robert and Samek, Wojciech},
+  journal={PLoS ONE},
+  volume={10},
+  number={7},
+  pages={e0130140},
+  year={2015},
+  publisher={Public Library of Science},
+  doi={10.1371/journal.pone.0130140}
+}
+
+@inproceedings{arras2016explaining,
+  title={Explaining recurrent neural network predictions in sentiment analysis},
+  author={Arras, Leila and Montavon, Gr{\'e}goire and M{\"u}ller, Klaus-Robert and Samek, Wojciech},
+  booktitle={Proceedings of the 8th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis},
+  pages={159--168},
+  year={2017},
+  address={Copenhagen, Denmark},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/W17-5221}
+}
+
+@inproceedings{shrikumar2017learning,
+  title={Learning important features through propagating activation differences},
+  author={Shrikumar, Avanti and Greenside, Peyton and Kundaje, Anshul},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
+  address = {Sydney, NSW, Australia},
+  series={Proceedings of Machine Learning Research},
+  volume={70},
+  pages={3145--3153},
+  year={2017},
+  publisher={PMLR}
+}
+
+@misc{li2016understanding,
+  title={Understanding neural networks through representation erasure},
+  author={Li, Jiwei and Monroe, Will and Jurafsky, Dan},
+  year={2016},
+  eprint={1612.08220},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL},
+  url={https://arxiv.org/abs/1612.08220}
+}
+
+@inproceedings{koh2017understanding,
+  title={Understanding black-box predictions via influence functions},
+  author={Koh, Pang Wei and Liang, Percy},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
+  address = {Sydney, NSW, Australia},
+  pages={1885--1894},
+  year={2017},
+  volume={70},
+  series={Proceedings of Machine Learning Research},
+  publisher={PMLR}
+}
+
+@inproceedings{yeh2018representer,
+  title={Representer point selection for explaining deep neural networks},
+  author={Yeh, Chih-Kuan and Kim, Joon and Yen, Ian En-Hsu and Ravikumar, Pradeep K},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={31},
+  year={2018}
+}
+
+@inproceedings{yang2020generating,
+  title={Generating plausible counterfactual explanations for deep transformers in financial text classification},
+  author={Yang, Linyi and Kenny, Eoin and Ng, Tin Lok James and Yang, Yi and Smyth, Barry and Dong, Ruihai},
+  booktitle={Proceedings of the 28th International Conference on Computational Linguistics},
+  pages={6150--6160},
+  year={2020},
+  address={Barcelona, Spain (Online)},
+  publisher={International Committee on Computational Linguistics},
+  doi={10.18653/v1/2020.coling-main.541}
+}
+
+@misc{bastani2017interpretability,
+  title={Interpretability via model extraction},
+  author={Bastani, Osbert and Kim, Carolyn and Bastani, Hamsa},
+  year={2017},
+  eprint={1706.09773},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG},
+  url={https://arxiv.org/abs/1706.09773}
+}
+
+@inproceedings{tan2018distill,
+  title={Distill-and-compare: Auditing black-box models using transparent model distillation},
+  author={Tan, Sarah and Caruana, Rich and Hooker, Giles and Lou, Yin},
+  booktitle={Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={303--310},
+  year={2018},
+  doi={10.1145/3278721.3278725}
+}
+
+@inproceedings{kim2018interpretability,
+  title={Interpretability beyond feature attribution: Quantitative testing with concept activation vectors ({TCAV})},
+  author={Kim, Been and Wattenberg, Martin and Gilmer, Justin and Cai, Carrie and Wexler, James and Viegas, Fernanda and Sayres, Rory},
+  booktitle={Proceedings of the 35th International Conference on Machine Learning},
+  address = {Stockholm, Sweden},
+  pages={2673--2682},
+  year={2018},
+  volume={80},
+  series={Proceedings of Machine Learning Research},
+  publisher={PMLR}
+}
+
+@inproceedings{belinkov2018evaluating,
+  title={Evaluating layers of representation in neural machine translation on part-of-speech and semantic tagging tasks},
+  author={Belinkov, Yonatan and M{\`a}rquez, Llu{\'\i}s and Sajjad, Hassan and Durrani, Nadir and Dalvi, Fahim and Glass, James},
+  booktitle={Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  pages={1--10},
+  year={2017},
+  address={Taipei, Taiwan},
+  publisher={Asian Federation of Natural Language Processing},
+  url={https://aclanthology.org/I17-1001/}
+}
+
+@inproceedings{lakkaraju2017interpretable,
+  title={Interpretable decision sets: A joint framework for description and prediction},
+  author={Lakkaraju, Himabindu and Bach, Stephen H. and Leskovec, Jure},
+  booktitle={Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={1675--1684},
+  year={2016},
+  doi={10.1145/2939672.2939874}
+}
+
+@inproceedings{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={30},
+  year={2017},
+  eprint={1706.03762},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@inproceedings{jain2019attention,
+  title={Attention is not explanation},
+  author={Jain, Sarthak and Wallace, Byron C.},
+  booktitle={Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  address = {Minneapolis, Minnesota},
+  publisher = {Association for Computational Linguistics},
+  pages={3543--3556},
+  year={2019},
+  doi={10.18653/v1/N19-1357}
+}
+
+@inproceedings{wiegreffe2019attention,
+  title={Attention is not not explanation},
+  author={Wiegreffe, Sarah and Pinter, Yuval},
+  booktitle={Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  address = {Hong Kong, China},
+  publisher = {Association for Computational Linguistics},
+  pages={11--20},
+  year={2019},
+  doi={10.18653/v1/D19-1002}
+}
+
+@inproceedings{serrano2019attention,
+  title={Is attention interpretable?},
+  author={Serrano, Sofia and Smith, Noah A.},
+  booktitle={Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  address = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  pages={2931--2951},
+  year={2019},
+  doi={10.18653/v1/P19-1282}
+}
+
+@inproceedings{mohankumar2020towards,
+  title={Towards transparent and explainable attention models},
+  author={Mohankumar, Akash Kumar and Nema, Preksha and Narasimhan, Sharan and Khapra, Mitesh M. and Srinivasan, Balaji Vasan and Ravindran, Balaraman},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  address = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages={4206--4216},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.387}
+}
+
+@inproceedings{abnar2020quantifying,
+  title={Quantifying attention flow in transformers},
+  author={Abnar, Samira and Zuidema, Willem},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  address = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages={4190--4197},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.385}
+}
+
+@inproceedings{deyoung2020eraser,
+  title={{ERASER}: A benchmark to evaluate rationalized {NLP} models},
+  author={DeYoung, Jay and Jain, Sarthak and Rajani, Nazneen Fatema and Lehman, Eric and Xiong, Caiming and Socher, Richard and Wallace, Byron C.},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  address = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages={4443--4458},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.408}
+}
+
+@inproceedings{jacovi2020towards,
+  title={Towards faithfully interpretable {NLP} systems: How should we define and evaluate faithfulness?},
+  author={Jacovi, Alon and Goldberg, Yoav},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  address = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages={4198--4205},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.386}
+}
+
+@article{jacovi2021aligning,
+  title={Aligning faithful interpretations with their social attribution},
+  author={Jacovi, Alon and Goldberg, Yoav},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={9},
+  pages={294--310},
+  year={2021},
+  doi={10.1162/tacl_a_00367}
+}
+
+@inproceedings{jacovi2021formalizing,
+  title={Formalizing trust in artificial intelligence: Prerequisites, causes and goals of human trust in {AI}},
+  author={Jacovi, Alon and Marasovi{\'c}, Ana and Miller, Tim and Goldberg, Yoav},
+  booktitle={Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={624--635},
+  year={2021},
+  doi={10.1145/3442188.3445923}
+}
+
+@inproceedings{camburu2018snli,
+  title={e-{SNLI}: Natural language inference with natural language explanations},
+  author={Camburu, Oana-Maria and Rockt{\"a}schel, Tim and Lukasiewicz, Thomas and Blunsom, Phil},
+  booktitle={Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume={31},
+  publisher={Curran Associates, Inc.},
+  year={2018}
+}
+
+@inproceedings{rajani2019explain,
+  title={Explain yourself! {L}everaging language models for commonsense reasoning},
+  author={Rajani, Nazneen Fatema and McCann, Bryan and Xiong, Caiming and Socher, Richard},
+  booktitle={Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  address = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  pages={4932--4942},
+  year={2019},
+  doi={10.18653/v1/P19-1487}
+}
+
+@inproceedings{lakkaraju2019faithful,
+  title={Faithful and customizable explanations of black box models},
+  author={Lakkaraju, Himabindu and Kamar, Ece and Caruana, Rich and Leskovec, Jure},
+  booktitle={Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={131--138},
+  year={2019},
+  doi={10.1145/3306618.3314229}
+}
+
+@inproceedings{kulesza2013too,
+  title={Too much, too little, or just right? {W}ays explanations impact end users' mental models},
+  author={Kulesza, Todd and Stumpf, Simone and Burnett, Margaret and Yang, Sherry and Kwan, Irwin and Wong, Weng-Keen},
+  booktitle={2013 IEEE Symposium on Visual Languages and Human Centric Computing},
+  address = {San Jose, CA, USA},
+  publisher = {IEEE},
+  pages={3--10},
+  year={2013},
+  organization={IEEE},
+  doi={10.1109/VLHCC.2013.6645235}
+}
+
+@inproceedings{bhatt2020explainable,
+  title={Explainable machine learning in deployment},
+  author={Bhatt, Umang and Xiang, Alice and Sharma, Shubham and Weller, Adrian and Taly, Ankur and Jia, Yunhan and Ghosh, Joydeep and Puri, Ruchir and Moura, Jos{\'e} M. F. and Eckersley, Peter},
+  booktitle={Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={648--657},
+  year={2020},
+  doi={10.1145/3351095.3375624}
+}
+
+@inproceedings{sokol2020explainability,
+  title={Explainability fact sheets: A framework for systematic assessment of explainable approaches},
+  author={Sokol, Kacper and Flach, Peter},
+  booktitle={Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pages={56--67},
+  year={2020},
+  doi={10.1145/3351095.3372870}
+}
+
+@inproceedings{hase2020evaluating,
+  title={Evaluating explainable {AI}: Which algorithmic explanations help users predict model behavior?},
+  author={Hase, Peter and Bansal, Mohit},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  address = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages={5540--5552},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.491}
+}
+
+@inproceedings{poerner2018evaluating,
+  title={Evaluating neural network explanation methods using hybrid documents and morphosyntactic agreement},
+  author={Poerner, Nina and Sch{\"u}tze, Hinrich and Roth, Benjamin},
+  booktitle={Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={340--350},
+  year={2018},
+  address={Melbourne, Australia},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/P18-1032}
+}
+
+@inproceedings{nguyen2018comparing,
+  title={Comparing Automatic and Human Evaluation of Local Explanations for Text Classification},
+  author={Nguyen, Dong},
+  booktitle={Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)},
+  pages={1069--1078},
+  year={2018},
+  address={New Orleans, Louisiana},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/N18-1097}
+}
+
+@inproceedings{lai2019human,
+  title={On Human Predictions with Explanations and Predictions of Machine Learning Models: A Case Study on Deception Detection},
+  author={Lai, Vivian and Tan, Chenhao},
+  booktitle={Proceedings of the Conference on Fairness, Accountability, and Transparency},
+  address = {New York, NY, USA},
+  pages={29--38},
+  year={2019},
+  publisher={ACM},
+  doi={10.1145/3287560.3287590}
+}
+
+@inproceedings{lai2020chicago,
+  title={``{W}hy is `{C}hicago' deceptive?'' {T}owards Building Model-Driven Tutorials for Humans},
+  author={Lai, Vivian and Liu, Han and Tan, Chenhao},
+  booktitle={Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+  address = {New York, NY, USA},
+  pages={1--13},
+  year={2020},
+  publisher={ACM},
+  doi={10.1145/3313831.3376873}
+}
+
+@inproceedings{caruana2015intelligible,
+  title={Intelligible Models for {HealthCare}: Predicting Pneumonia Risk and Hospital 30-day Readmission},
+  author={Caruana, Rich and Lou, Yin and Gehrke, Johannes and Koch, Paul and Sturm, Marc and Elhadad, Noemie},
+  booktitle={Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  address = {New York, NY, USA},
+  pages={1721--1730},
+  year={2015},
+  publisher={ACM},
+  doi={10.1145/2783258.2788613}
+}
+
+@inproceedings{han2020explaining,
+  title={Explaining Black Box Predictions and Unveiling Data Artifacts through Influence Functions},
+  author={Han, Xiaochuang and Wallace, Byron C. and Tsvetkov, Yulia},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages={5553--5563},
+  year={2020},
+  address={Online},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/2020.acl-main.492}
+}
+
+@inproceedings{teso2019explanatory,
+  title={Explanatory Interactive Machine Learning},
+  author={Teso, Stefano and Kersting, Kristian},
+  booktitle={Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society},
+  address = {New York, NY, USA},
+  pages={239--245},
+  year={2019},
+  publisher={ACM},
+  doi={10.1145/3306618.3314293}
+}
+
+@techreport{ransbotham2020expanding,
+  title={Expanding {AI}'s Impact with Organizational Learning},
+  author={Ransbotham, Sam and Khodabandeh, Shervin and Kiron, David and Candelon, Fran{\c{c}}ois and Chu, Michael and LaFountain, Burt},
+  institution={MIT Sloan Management Review and Boston Consulting Group},
+  month=oct,
+  year={2020},
+  url={https://sloanreview.mit.edu/projects/expanding-ais-impact-with-organizational-learning/},
+  note={Research report. Accessed July 2026}
+}
+
+@inproceedings{mikolov2013distributed,
+  title={Distributed Representations of Words and Phrases and their Compositionality},
+  author={Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  booktitle={Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume={26},
+  year={2013},
+  publisher={Curran Associates, Inc.},
+  eprint={1310.4546},
+  archiveprefix={arXiv}
+}
+
+@article{elman1990finding,
+  title={Finding structure in time},
+  author={Elman, Jeffrey L.},
+  journal={Cognitive Science},
+  volume={14},
+  number={2},
+  pages={179--211},
+  year={1990},
+  publisher={Wiley},
+  doi={10.1207/s15516709cog1402_1}
+}
+
+
+@book{hosmer2013applied,
+  title={Applied logistic regression},
+  author={Hosmer Jr., David W. and Lemeshow, Stanley and Sturdivant, Rodney X.},
+  edition={3},
+  series={Wiley Series in Probability and Statistics},
+  publisher={John Wiley \& Sons},
+  address={Hoboken, NJ},
+  year={2013},
+  isbn={978-0-470-58247-3},
+  doi={10.1002/9781118548387}
+}
+
+@article{zhang2001text,
+  title={Text categorization based on regularized linear classification methods},
+  author={Zhang, Tong and Oles, Frank J.},
+  journal={Information Retrieval},
+  volume={4},
+  number={1},
+  pages={5--31},
+  year={2001},
+  publisher={Springer},
+  doi={10.1023/A:1011441423217}
+}
+
+@inproceedings{wei2022chain,
+  title={Chain-of-thought prompting elicits reasoning in large language models},
+  author={Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc V. and Zhou, Denny},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={35},
+  pages={24824--24837},
+  year={2022},
+  eprint={2201.11903},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@inproceedings{kojima2022large,
+  title={Large language models are zero-shot reasoners},
+  author={Kojima, Takeshi and Gu, Shixiang Shane and Reid, Machel and Matsuo, Yutaka and Iwasawa, Yusuke},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={35},
+  pages={22199--22213},
+  year={2022},
+  eprint={2205.11916},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@inproceedings{wang2023self,
+  title={Self-consistency improves chain of thought reasoning in language models},
+  author={Wang, Xuezhi and Wei, Jason and Schuurmans, Dale and Le, Quoc and Chi, Ed and Narang, Sharan and Chowdhery, Aakanksha and Zhou, Denny},
+  booktitle={The Eleventh International Conference on Learning Representations},
+  address = {Kigali, Rwanda},
+  publisher = {OpenReview.net},
+  year={2023},
+  eprint={2203.11171},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@inproceedings{turpin2023language,
+  title={Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting},
+  author={Turpin, Miles and Michael, Julian and Perez, Ethan and Bowman, Samuel R.},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={36},
+  year={2023},
+  eprint={2305.04388},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@misc{lanham2023measuring,
+  title={Measuring faithfulness in chain-of-thought reasoning},
+  author={Lanham, Tamera and Chen, Anna and Radhakrishnan, Ansh and Steiner, Benoit and Denison, Carson and Hernandez, Danny and Li, Dustin and Durmus, Esin and Hubinger, Evan and Kernion, Jackson and Luko{\v{s}}i{\=u}t{\.e}, Kamil{\.e} and Nguyen, Karina and Cheng, Newton and Joseph, Nicholas and Schiefer, Nicholas and Rausch, Oliver and Larson, Robin and McCandlish, Sam and Kundu, Sandipan and Kadavath, Saurav and Yang, Shannon and Henighan, Thomas and Maxwell, Timothy and Telleen-Lawton, Timothy and Hume, Tristan and Hatfield-Dodds, Zac and Kaplan, Jared and Brauner, Jan and Bowman, Samuel R. and Perez, Ethan},
+  year={2023},
+  eprint={2307.13702},
+  archiveprefix={arXiv},
+  primaryclass={cs.AI},
+  url={https://arxiv.org/abs/2307.13702}
+}
+
+@inproceedings{ye2022unreliability,
+  title={The unreliability of explanations in few-shot prompting for textual reasoning},
+  author={Ye, Xi and Durrett, Greg},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={35},
+  pages={30378--30392},
+  year={2022},
+  eprint={2205.03401},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@misc{elhage2022toy,
+  title={Toy models of superposition},
+  author={Elhage, Nelson and Hume, Tristan and Olsson, Catherine and Schiefer, Nicholas and Henighan, Tom and Kravec, Shauna and Hatfield-Dodds, Zac and Lasenby, Robert and Drain, Dawn and Chen, Carol and Grosse, Roger and McCandlish, Sam and Kaplan, Jared and Amodei, Dario and Wattenberg, Martin and Olah, Christopher},
+  howpublished={Transformer Circuits Thread},
+  url={https://transformer-circuits.pub/2022/toy_model/index.html},
+  year={2022},
+  eprint={2209.10652},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG},
+  note={Accessed July 2026}
+}
+
+@inproceedings{conmy2023automated,
+  title={Towards automated circuit discovery for mechanistic interpretability},
+  author={Conmy, Arthur and Mavor-Parker, Augustine N and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adri{\`a}},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={36},
+  year={2023},
+  eprint={2304.14997},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG}
+}
+
+@misc{bills2023language,
+  title={Language models can explain neurons in language models},
+  author={Bills, Steven and Cammarata, Nick and Mossing, Dan and Tillman, Henk and Gao, Leo and Goh, Gabriel and Sutskever, Ilya and Leike, Jan and Wu, Jeff and Saunders, William},
+  howpublished={OpenAI},
+  url={https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html},
+  year={2023},
+  note={Accessed July 2026}
+}
+
+@article{zhao2024explainability,
+  title={Explainability for large language models: A survey},
+  author={Zhao, Haiyan and Chen, Hanjie and Yang, Fan and Liu, Ninghao and Deng, Huiqi and Cai, Hengyi and Wang, Shuaiqiang and Yin, Dawei and Du, Mengnan},
+  journal={ACM Transactions on Intelligent Systems and Technology},
+  volume={15},
+  number={2},
+  pages={1--38},
+  year={2024},
+  publisher={ACM},
+  doi={10.1145/3639372}
+}
+
+@inproceedings{lyu2023faithful,
+  title={Faithful chain-of-thought reasoning},
+  author={Lyu, Qing and Havaldar, Shreya and Stein, Adam and Zhang, Li and Rao, Delip and Wong, Eric and Apidianaki, Marianna and Callison-Burch, Chris},
+  booktitle={Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  address = {Nusa Dua, Bali},
+  pages={305--329},
+  year={2023},
+  month=nov,
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/2023.ijcnlp-main.20}
+}
+
+@misc{singh2024rethinking,
+  title={Rethinking interpretability in the era of large language models},
+  author={Singh, Chandan and Inala, Jeevana Priya and Galley, Michel and Caruana, Rich and Gao, Jianfeng},
+  year={2024},
+  eprint={2402.01761},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL},
+  url={https://arxiv.org/abs/2402.01761}
+}
+
+@inproceedings{chen2023teaching,
+  title={Teaching large language models to self-debug},
+  author={Chen, Xinyun and Lin, Maxwell and Sch{\"a}rli, Nathanael and Zhou, Denny},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  address = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year={2024},
+  url={https://openreview.net/forum?id=KuPixIqPiq},
+  eprint={2304.05128},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@inproceedings{wu2024interpretability,
+  title={Interpretability at scale: Identifying causal mechanisms in {A}lpaca},
+  author={Wu, Zhengxuan and Geiger, Atticus and Icard, Thomas and Potts, Christopher and Goodman, Noah},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  volume={36},
+  year={2023},
+  eprint={2305.08809},
+  archiveprefix={arXiv},
+  primaryclass={cs.CL}
+}
+
+@misc{templeton2024scaling,
+  title={Scaling monosemanticity: Extracting interpretable features from {C}laude 3 {S}onnet},
+  author={Templeton, Adly and Conerly, Tom and Marcus, Jonathan and Lindsey, Jack and Bricken, Trenton and Chen, Brian and Pearce, Adam and Citro, Craig and Ameisen, Emmanuel and Jones, Andy and Cunningham, Hoagy and Turner, Nicholas L. and McDougall, Callum and MacDiarmid, Monte and Tamkin, Alex and Durmus, Esin and Hume, Tristan and Mosconi, Francesco and Freeman, C. Daniel and Sumers, Theodore R. and Rees, Edward and Batson, Joshua and Jermyn, Adam and Carter, Shan and Olah, Chris and Henighan, Tom},
+  howpublished={Transformer Circuits Thread},
+  url={https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html},
+  year={2024},
+  note={Accessed July 2026}
+}
+
+@inproceedings{nanda2023progress,
+  title={Progress measures for grokking via mechanistic interpretability},
+  author={Nanda, Neel and Chan, Lawrence and Lieberum, Tom and Smith, Jess and Steinhardt, Jacob},
+  booktitle={The Eleventh International Conference on Learning Representations},
+  address = {Kigali, Rwanda},
+  publisher = {OpenReview.net},
+  year={2023},
+  url={https://openreview.net/forum?id=9XFSbDPmdW},
+  eprint={2301.05217},
+  archiveprefix={arXiv},
+  primaryclass={cs.LG}
+}
+
+@inproceedings{meng2022locating,
+  title={Locating and Editing Factual Associations in {GPT}},
+  author={Meng, Kevin and Bau, David and Andonian, Alex and Belinkov, Yonatan},
+  booktitle={Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume={35},
+  pages={17359--17372},
+  year={2022},
+  publisher={Curran Associates, Inc.},
+  eprint={2202.05262},
+  archiveprefix={arXiv}
+}
+
+@inproceedings{geva2023dissecting,
+  title={Dissecting Recall of Factual Associations in Auto-Regressive Language Models},
+  author={Geva, Mor and Bastings, Jasmijn and Filippova, Katja and Globerson, Amir},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={12216--12235},
+  year={2023},
+  month=dec,
+  address={Singapore},
+  publisher={Association for Computational Linguistics},
+  doi={10.18653/v1/2023.emnlp-main.751},
+  url={https://aclanthology.org/2023.emnlp-main.751/}
+}
+
+@misc{hendrycks2023overview,
+  title={An Overview of Catastrophic {AI} Risks},
+  author={Hendrycks, Dan and Mazeika, Mantas and Woodside, Thomas},
+  year={2023},
+  eprint={2306.12001},
+  archiveprefix={arXiv},
+  primaryclass={cs.CY},
+  url={https://arxiv.org/abs/2306.12001}
+}
+
+@misc{euaiact2024,
+  title={Regulation ({EU}) 2024/1689 of the {European Parliament} and of the {Council} of 13 {June} 2024 laying down harmonised rules on artificial intelligence ({Artificial Intelligence Act})},
+  author={{European Parliament and Council of the European Union}},
+  year={2024},
+  howpublished={Official Journal of the European Union, OJ L, 2024/1689, 12.7.2024},
+  url={https://eur-lex.europa.eu/eli/reg/2024/1689/oj},
+  note={Accessed July 2026}
+}
+
+@misc{gdpr2016,
+  title={Regulation ({EU}) 2016/679 of the {European Parliament} and of the {Council} of 27 {April} 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data ({General Data Protection Regulation})},
+  author={{European Parliament and Council of the European Union}},
+  year={2016},
+  howpublished={Official Journal of the European Union, OJ L 119, 4.5.2016, pp. 1--88},
+  url={https://eur-lex.europa.eu/eli/reg/2016/679/oj},
+  note={Accessed July 2026}
+}
+
+@misc{fda2021aiml,
+  title={Artificial Intelligence/Machine Learning ({AI/ML})-Based Software as a Medical Device ({SaMD}) Action Plan},
+  author={{U.S. Food and Drug Administration}},
+  year={2021},
+  howpublished={U.S. Food and Drug Administration},
+  url={https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device},
+  note={Published January 2021. Action plan document: https://www.fda.gov/media/145022/download. Accessed July 2026}
+}
+
+@article{wachter2017right,
+  title={Why a right to explanation of automated decision-making does not exist in the {General Data Protection Regulation}},
+  author={Wachter, Sandra and Mittelstadt, Brent and Floridi, Luciano},
+  journal={International Data Privacy Law},
+  volume={7},
+  number={2},
+  pages={76--99},
+  year={2017},
+  publisher={Oxford University Press},
+  doi={10.1093/idpl/ipx005}
+}
+
+@article{selbst2018meaningful,
+  title={Meaningful information and the right to explanation},
+  author={Selbst, Andrew D and Powles, Julia},
+  journal={International Data Privacy Law},
+  volume={7},
+  number={4},
+  pages={233--242},
+  year={2017},
+  publisher={Oxford University Press},
+  doi={10.1093/idpl/ipx022}
+}
+
+% ===================== NEW: CLAIM SOURCES =====================
+
+@article{gunning2019darpa,
+  author  = {Gunning, David and Aha, David W.},
+  title   = {{DARPA}'s Explainable Artificial Intelligence ({XAI}) Program},
+  journal = {AI Magazine},
+  volume  = {40},
+  number  = {2},
+  pages   = {44--58},
+  year    = {2019},
+  month   = jun,
+  doi     = {10.1609/aimag.v40i2.2850},
+  issn    = {0738-4602}
+}
+
+% ===================== NEW: REGULATORY (2025-2026) =====================
+
+@misc{eo14179,
+  author       = {{Executive Office of the President}},
+  title        = {Removing Barriers to {American} Leadership in Artificial Intelligence ({Executive Order} 14179 of {January} 23, 2025)},
+  howpublished = {Federal Register, Vol.~90, No.~20, pp.~8741--8742},
+  year         = {2025},
+  month        = jan,
+  url          = {https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence},
+  note         = {90 FR 8741; signed January 23, 2025. Accessed July 2026}
+}
+
+@misc{cfpb2022circular,
+  author       = {{Consumer Financial Protection Bureau}},
+  title        = {{Consumer Financial Protection Circular 2022-03: Adverse Action Notification Requirements in Connection with Credit Decisions Based on Complex Algorithms}},
+  howpublished = {Consumer Financial Protection Bureau},
+  year         = {2022},
+  month        = may,
+  url          = {https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/},
+  note         = {Issued May 26, 2022; published at 87 FR 35864 (June 14, 2022). Withdrawn by the CFPB effective May 12, 2025 (90 FR 20084); the underlying ECOA/Regulation B requirements (12 C.F.R. \S~1002.9) remain in force. Accessed July 2026}
+}
+
+@misc{fda2025draft,
+  author       = {{U.S. Food and Drug Administration}},
+  title        = {Artificial Intelligence-Enabled Device Software Functions: Lifecycle Management and Marketing Submission Recommendations},
+  howpublished = {Draft Guidance for Industry and Food and Drug Administration Staff, Docket No. FDA-2024-D-4488},
+  year         = {2025},
+  month        = jan,
+  url          = {https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing},
+  note         = {Draft guidance issued January 2025 (notice of availability, 90 FR, Jan.~7, 2025); comment period closed April 7, 2025; not yet finalized as of July 2026. Accessed July 2026}
+}
+
+@misc{coloradoai2024,
+  author       = {{Colorado General Assembly}},
+  title        = {{Senate Bill 24-205: Consumer Protections for Artificial Intelligence}},
+  howpublished = {Colorado General Assembly},
+  year         = {2024},
+  month        = may,
+  url          = {https://leg.colorado.gov/bills/sb24-205},
+  note         = {Signed May 17, 2024. Effective date delayed from February 1, 2026 to June 30, 2026 by SB~25B-004 (Aug.~2025); repealed and reenacted as a narrower automated decision-making technology (ADMT) framework by SB~26-189 (signed May 14, 2026; effective January 1, 2027). Accessed July 2026}
+}
+
+% ===================== NEW: MECHANISTIC INTERPRETABILITY: SAEs AND CIRCUITS =====================
+
+@misc{olsson2022induction,
+  author       = {Olsson, Catherine and Elhage, Nelson and Nanda, Neel and Joseph, Nicholas and DasSarma, Nova and Henighan, Tom and Mann, Ben and Askell, Amanda and Bai, Yuntao and Chen, Anna and Conerly, Tom and Drain, Dawn and Ganguli, Deep and Hatfield-Dodds, Zac and Hernandez, Danny and Johnston, Scott and Jones, Andy and Kernion, Jackson and Lovitt, Liane and Ndousse, Kamal and Amodei, Dario and Brown, Tom and Clark, Jack and Kaplan, Jared and McCandlish, Sam and Olah, Chris},
+  title        = {In-context Learning and Induction Heads},
+  year         = {2022},
+  howpublished = {Transformer Circuits Thread},
+  url          = {https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html}
+}
+
+@article{olah2020zoom,
+  author  = {Olah, Chris and Cammarata, Nick and Schubert, Ludwig and Goh, Gabriel and Petrov, Michael and Carter, Shan},
+  title   = {Zoom In: An Introduction to Circuits},
+  journal = {Distill},
+  volume  = {5},
+  number  = {3},
+  year    = {2020},
+  doi     = {10.23915/distill.00024.001},
+  url     = {https://distill.pub/2020/circuits/zoom-in}
+}
+
+@misc{bricken2023monosemanticity,
+  author       = {Bricken, Trenton and Templeton, Adly and Batson, Joshua and Chen, Brian and Jermyn, Adam and Conerly, Tom and Turner, Nick and Anil, Cem and Denison, Carson and Askell, Amanda and Lasenby, Robert and Wu, Yifan and Kravec, Shauna and Schiefer, Nicholas and Maxwell, Tim and Joseph, Nicholas and Hatfield-Dodds, Zac and Tamkin, Alex and Nguyen, Karina and McLean, Brayden and Burke, Josiah E and Hume, Tristan and Carter, Shan and Henighan, Tom and Olah, Christopher},
+  title        = {Towards Monosemanticity: Decomposing Language Models With Dictionary Learning},
+  year         = {2023},
+  howpublished = {Transformer Circuits Thread},
+  url          = {https://transformer-circuits.pub/2023/monosemantic-features/index.html}
+}
+
+@inproceedings{cunningham2023sparse,
+  author    = {Huben, Robert and Cunningham, Hoagy and {Riggs Smith}, Logan and Ewart, Aidan and Sharkey, Lee},
+  title     = {Sparse Autoencoders Find Highly Interpretable Features in Language Models},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  address = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year      = {2024},
+  url       = {https://openreview.net/forum?id=F76bwRSLeK}
+}
+
+@inproceedings{gao2024scaling,
+  author    = {Gao, Leo and {Dupr\'e la Tour}, Tom and Tillman, Henk and Goh, Gabriel and Troll, Rajan and Radford, Alec and Sutskever, Ilya and Leike, Jan and Wu, Jeffrey},
+  title     = {Scaling and Evaluating Sparse Autoencoders},
+  booktitle = {The Thirteenth International Conference on Learning Representations},
+  address = {Singapore},
+  publisher = {OpenReview.net},
+  year      = {2025},
+  url       = {https://openreview.net/forum?id=tcsZt9ZNKD}
+}
+
+@misc{rajamanoharan2024jumprelu,
+  author        = {Rajamanoharan, Senthooran and Lieberum, Tom and Sonnerat, Nicolas and Conmy, Arthur and Varma, Vikrant and Kram\'ar, J\'anos and Nanda, Neel},
+  title         = {Jumping Ahead: Improving Reconstruction Fidelity with {JumpReLU} Sparse Autoencoders},
+  year          = {2024},
+  eprint        = {2407.14435},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2407.14435}
+}
+
+@inproceedings{lieberum2024gemmascope,
+  title     = {{Gemma Scope}: Open Sparse Autoencoders Everywhere All At Once on {Gemma} 2},
+  author    = {Lieberum, Tom and Rajamanoharan, Senthooran and Conmy, Arthur and Smith, Lewis and Sonnerat, Nicolas and Varma, Vikrant and Kramar, Janos and Dragan, Anca and Shah, Rohin and Nanda, Neel},
+  editor    = {Belinkov, Yonatan and Kim, Najoung and Jumelet, Jaap and Mohebbi, Hosein and Mueller, Aaron and Chen, Hanjie},
+  booktitle = {Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP},
+  month     = nov,
+  year      = {2024},
+  address   = {Miami, Florida, US},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/2024.blackboxnlp-1.19/},
+  doi       = {10.18653/v1/2024.blackboxnlp-1.19},
+  pages     = {278--300}
+}
+
+@misc{lindsey2024crosscoders,
+  author       = {Lindsey, Jack and Templeton, Adly and Marcus, Jonathan and Conerly, Thomas and Batson, Joshua and Olah, Christopher},
+  title        = {Sparse Crosscoders for Cross-Layer Features and Model Diffing},
+  year         = {2024},
+  howpublished = {Transformer Circuits Thread},
+  url          = {https://transformer-circuits.pub/2024/crosscoders/index.html}
+}
+
+@misc{ameisen2025circuit,
+  author       = {Ameisen, Emmanuel and Lindsey, Jack and Pearce, Adam and Gurnee, Wes and Turner, Nicholas L. and Chen, Brian and Citro, Craig and Abrahams, David and Carter, Shan and Hosmer, Basil and Marcus, Jonathan and Sklar, Michael and Templeton, Adly and Bricken, Trenton and McDougall, Callum and Cunningham, Hoagy and Henighan, Thomas and Jermyn, Adam and Jones, Andy and Persic, Andrew and Qi, Zhenyi and {Ben Thompson}, T. and Zimmerman, Sam and Rivoire, Kelley and Conerly, Thomas and Olah, Chris and Batson, Joshua},
+  title        = {Circuit Tracing: Revealing Computational Graphs in Language Models},
+  year         = {2025},
+  howpublished = {Transformer Circuits Thread},
+  url          = {https://transformer-circuits.pub/2025/attribution-graphs/methods.html}
+}
+
+@misc{lindsey2025biology,
+  author       = {Lindsey, Jack and Gurnee, Wes and Ameisen, Emmanuel and Chen, Brian and Pearce, Adam and Turner, Nicholas L. and Citro, Craig and Abrahams, David and Carter, Shan and Hosmer, Basil and Marcus, Jonathan and Sklar, Michael and Templeton, Adly and Bricken, Trenton and McDougall, Callum and Cunningham, Hoagy and Henighan, Thomas and Jermyn, Adam and Jones, Andy and Persic, Andrew and Qi, Zhenyi and Thompson, T. Ben and Zimmerman, Sam and Rivoire, Kelley and Conerly, Thomas and Olah, Chris and Batson, Joshua},
+  title        = {On the Biology of a Large Language Model},
+  year         = {2025},
+  howpublished = {Transformer Circuits Thread},
+  url          = {https://transformer-circuits.pub/2025/attribution-graphs/biology.html}
+}
+
+@article{sharkey2025open,
+  author        = {Sharkey, Lee and Chughtai, Bilal and Batson, Joshua and Lindsey, Jack and Wu, Jeff and Bushnaq, Lucius and Goldowsky-Dill, Nicholas and Heimersheim, Stefan and Ortega, Alejandro and Bloom, Joseph and Biderman, Stella and Garriga-Alonso, Adria and Conmy, Arthur and Nanda, Neel and Rumbelow, Jessica and Wattenberg, Martin and Schoots, Nandi and Miller, Joseph and Michaud, Eric J. and Casper, Stephen and Tegmark, Max and Saunders, William and Bau, David and Todd, Eric and Geiger, Atticus and Geva, Mor and Hoogland, Jesse and Murfet, Daniel and McGrath, Tom},
+  title         = {Open Problems in Mechanistic Interpretability},
+  journal       = {Transactions on Machine Learning Research},
+  issn          = {2835-8856},
+  year          = {2025},
+  url           = {https://openreview.net/forum?id=91H76m9Z94},
+  note          = {arXiv:2501.16496}
+}
+
+% ===================== NEW: MODEL EDITING, LENSES, AND COMPONENT ANALYSIS =====================
+
+@misc{belrose2023tuned,
+  title         = {Eliciting Latent Predictions from Transformers with the Tuned Lens},
+  author        = {Nora Belrose and Igor Ostrovsky and Lev McKinney and Zach Furman and Logan Smith and Danny Halawi and Stella Biderman and Jacob Steinhardt},
+  year          = {2023},
+  eprint        = {2303.08112},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2303.08112}
+}
+
+@inproceedings{ghandeharioun2024patchscopes,
+  title     = {Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models},
+  author    = {Ghandeharioun, Asma and Caciularu, Avi and Pearce, Adam and Dixon, Lucas and Geva, Mor},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  address = {Vienna, Austria},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {235},
+  pages     = {15466--15490},
+  publisher = {PMLR},
+  year      = {2024},
+  url       = {https://proceedings.mlr.press/v235/ghandeharioun24a.html}
+}
+
+@inproceedings{todd2024function,
+  title     = {Function Vectors in Large Language Models},
+  author    = {Eric Todd and Millicent L. Li and Arnab Sen Sharma and Aaron Mueller and Byron C. Wallace and David Bau},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  address = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year      = {2024},
+  url       = {https://openreview.net/forum?id=AwyxtyMwaG}
+}
+
+@misc{zou2023representation,
+  title         = {Representation Engineering: A Top-Down Approach to {AI} Transparency},
+  author        = {Andy Zou and Long Phan and Sarah Chen and James Campbell and Phillip Guo and Richard Ren and Alexander Pan and Xuwang Yin and Mantas Mazeika and Ann-Kathrin Dombrowski and Shashwat Goel and Nathaniel Li and Michael J. Byun and Zifan Wang and Alex Mallen and Steven Basart and Sanmi Koyejo and Dawn Song and Matt Fredrikson and J. Zico Kolter and Dan Hendrycks},
+  year          = {2023},
+  eprint        = {2310.01405},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2310.01405}
+}
+
+@inproceedings{hase2023does,
+  title     = {Does Localization Inform Editing? {S}urprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models},
+  author    = {Peter Hase and Mohit Bansal and Been Kim and Asma Ghandeharioun},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume    = {36},
+  publisher = {Curran Associates, Inc.},
+  year      = {2023},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html}
+}
+
+@inproceedings{dai2022knowledge,
+  title     = {Knowledge Neurons in Pretrained Transformers},
+  author    = {Dai, Damai and Dong, Li and Hao, Yaru and Sui, Zhifang and Chang, Baobao and Wei, Furu},
+  booktitle = {Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  month     = may,
+  year      = {2022},
+  address   = {Dublin, Ireland},
+  publisher = {Association for Computational Linguistics},
+  pages     = {8493--8502},
+  doi       = {10.18653/v1/2022.acl-long.581},
+  url       = {https://aclanthology.org/2022.acl-long.581/}
+}
+
+@inproceedings{frankle2019lottery,
+  title     = {The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks},
+  author    = {Jonathan Frankle and Michael Carbin},
+  booktitle = {International Conference on Learning Representations},
+  address = {New Orleans, Louisiana, USA},
+  publisher = {OpenReview.net},
+  year      = {2019},
+  url       = {https://openreview.net/forum?id=rJl-b3RcF7}
+}
+
+@inproceedings{michel2019sixteen,
+  title     = {Are Sixteen Heads Really Better than One?},
+  author    = {Michel, Paul and Levy, Omer and Neubig, Graham},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume    = {32},
+  publisher = {Curran Associates, Inc.},
+  year      = {2019},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2019/hash/2c601ad9d2ff9bc8b282670cdd54f69f-Abstract.html}
+}
+
+@inproceedings{voita2019analyzing,
+  title     = {Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned},
+  author    = {Voita, Elena and Talbot, David and Moiseev, Fedor and Sennrich, Rico and Titov, Ivan},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  month     = jul,
+  year      = {2019},
+  address   = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  pages     = {5797--5808},
+  doi       = {10.18653/v1/P19-1580},
+  url       = {https://aclanthology.org/P19-1580/}
+}
+
+@inproceedings{geva2021keyvalue,
+  title     = {Transformer Feed-Forward Layers Are Key-Value Memories},
+  author    = {Geva, Mor and Schuster, Roei and Berant, Jonathan and Levy, Omer},
+  booktitle = {Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+  month     = nov,
+  year      = {2021},
+  address   = {Online and Punta Cana, Dominican Republic},
+  publisher = {Association for Computational Linguistics},
+  pages     = {5484--5495},
+  doi       = {10.18653/v1/2021.emnlp-main.446},
+  url       = {https://aclanthology.org/2021.emnlp-main.446/}
+}
+
+@misc{ferrando2024primer,
+  title         = {A Primer on the Inner Workings of Transformer-based Language Models},
+  author        = {Javier Ferrando and Gabriele Sarti and Arianna Bisazza and Marta R. Costa-juss{\`a}},
+  year          = {2024},
+  eprint        = {2405.00208},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2405.00208}
+}
+
+@article{bereska2024safety,
+  title   = {Mechanistic Interpretability for {AI} Safety -- A Review},
+  author  = {Leonard Bereska and Efstratios Gavves},
+  journal = {Transactions on Machine Learning Research},
+  issn    = {2835-8856},
+  year    = {2024},
+  url     = {https://openreview.net/forum?id=ePUVetPKu6}
+}
+
+% ===================== NEW: REASONING MODELS AND FAITHFULNESS EVALUATION =====================
+
+@misc{openai2024o1,
+  author        = {{OpenAI}},
+  title         = {{OpenAI} o1 System Card},
+  year          = {2024},
+  eprint        = {2412.16720},
+  archivePrefix = {arXiv},
+  doi           = {10.48550/arXiv.2412.16720},
+  url           = {https://arxiv.org/abs/2412.16720}
+}
+
+@article{deepseek2025r1,
+  author = {{DeepSeek-AI} and Guo, Daya and Yang, Dejian and Zhang, Haowei and Song, Junxiao and Wang, Peiyi and others},
+  title = {{DeepSeek-R1} incentivizes reasoning in {LLMs} through reinforcement learning},
+  journal = {Nature},
+  volume = {645},
+  number = {8081},
+  pages = {633--638},
+  year = {2025},
+  doi = {10.1038/s41586-025-09422-z},
+  note = {Peer-reviewed version of arXiv:2501.12948}
+}
+
+@misc{chen2025reasoning,
+  author        = {Chen, Yanda and Benton, Joe and Radhakrishnan, Ansh and Uesato, Jonathan and Denison, Carson and Schulman, John and Somani, Arushi and Hase, Peter and Wagner, Misha and Roger, Fabien and Mikulik, Vlad and Bowman, Samuel R. and Leike, Jan and Kaplan, Jared and Perez, Ethan},
+  title         = {Reasoning Models Don't Always Say What They Think},
+  year          = {2025},
+  eprint        = {2505.05410},
+  archivePrefix = {arXiv},
+  doi           = {10.48550/arXiv.2505.05410},
+  url           = {https://arxiv.org/abs/2505.05410},
+  note          = {Anthropic Alignment Science report}
+}
+
+@misc{baker2025monitoring,
+  author        = {Baker, Bowen and Huizinga, Joost and Gao, Leo and Dou, Zehao and Guan, Melody Y. and Madry, Aleksander and Zaremba, Wojciech and Pachocki, Jakub and Farhi, David},
+  title         = {Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation},
+  year          = {2025},
+  eprint        = {2503.11926},
+  archivePrefix = {arXiv},
+  doi           = {10.48550/arXiv.2503.11926},
+  url           = {https://arxiv.org/abs/2503.11926}
+}
+
+@inproceedings{madsen2024selfexplanations,
+  author    = {Madsen, Andreas and Chandar, Sarath and Reddy, Siva},
+  title     = {Are self-explanations from Large Language Models faithful?},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  editor    = {Ku, Lun-Wei and Martins, Andre and Srikumar, Vivek},
+  month     = aug,
+  year      = {2024},
+  address   = {Bangkok, Thailand},
+  publisher = {Association for Computational Linguistics},
+  pages     = {295--337},
+  doi       = {10.18653/v1/2024.findings-acl.19},
+  url       = {https://aclanthology.org/2024.findings-acl.19/}
+}
+
+@article{lyu2024towards,
+  author    = {Lyu, Qing and Apidianaki, Marianna and Callison-Burch, Chris},
+  title     = {Towards Faithful Model Explanation in {NLP}: A Survey},
+  journal   = {Computational Linguistics},
+  volume    = {50},
+  number    = {2},
+  pages     = {657--723},
+  month     = jun,
+  year      = {2024},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  doi       = {10.1162/coli_a_00511},
+  url       = {https://aclanthology.org/2024.cl-2.6/}
+}
+
+@inproceedings{hooker2019roar,
+  author    = {Hooker, Sara and Erhan, Dumitru and Kindermans, Pieter-Jan and Kim, Been},
+  title     = {A Benchmark for Interpretability Methods in Deep Neural Networks},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume    = {32},
+  year      = {2019},
+  publisher = {Curran Associates, Inc.},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2019/hash/fe4b8556000d0f0cae99daa5c5c5a410-Abstract.html}
+}
+
+@inproceedings{madsen2022roar,
+  author    = {Madsen, Andreas and Meade, Nicholas and Adlakha, Vaibhav and Reddy, Siva},
+  title     = {Evaluating the Faithfulness of Importance Measures in {NLP} by Recursively Masking Allegedly Important Tokens and Retraining},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2022},
+  editor    = {Goldberg, Yoav and Kozareva, Zornitsa and Zhang, Yue},
+  month     = dec,
+  year      = {2022},
+  address   = {Abu Dhabi, United Arab Emirates},
+  publisher = {Association for Computational Linguistics},
+  pages     = {1731--1751},
+  doi       = {10.18653/v1/2022.findings-emnlp.125},
+  url       = {https://aclanthology.org/2022.findings-emnlp.125/}
+}
+
+@inproceedings{atanasova2020diagnostic,
+  author    = {Atanasova, Pepa and Simonsen, Jakob Grue and Lioma, Christina and Augenstein, Isabelle},
+  title     = {A Diagnostic Study of Explainability Techniques for Text Classification},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  editor    = {Webber, Bonnie and Cohn, Trevor and He, Yulan and Liu, Yang},
+  month     = nov,
+  year      = {2020},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {3256--3274},
+  doi       = {10.18653/v1/2020.emnlp-main.263},
+  url       = {https://aclanthology.org/2020.emnlp-main.263/}
+}
+
+@inproceedings{chan2022comparative,
+  author    = {Chan, Chun Sik and Kong, Huanqi and Guanqing, Liang},
+  title     = {A Comparative Study of Faithfulness Metrics for Model Interpretability Methods},
+  booktitle = {Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  editor    = {Muresan, Smaranda and Nakov, Preslav and Villavicencio, Aline},
+  month     = may,
+  year      = {2022},
+  address   = {Dublin, Ireland},
+  publisher = {Association for Computational Linguistics},
+  pages     = {5029--5038},
+  doi       = {10.18653/v1/2022.acl-long.345},
+  url       = {https://aclanthology.org/2022.acl-long.345/}
+}
+
+@inproceedings{parcalabescu2024measures,
+  author    = {Parcalabescu, Letitia and Frank, Anette},
+  title     = {On Measuring Faithfulness or Self-consistency of Natural Language Explanations},
+  booktitle = {Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  editor    = {Ku, Lun-Wei and Martins, Andre and Srikumar, Vivek},
+  month     = aug,
+  year      = {2024},
+  address   = {Bangkok, Thailand},
+  publisher = {Association for Computational Linguistics},
+  pages     = {6048--6089},
+  doi       = {10.18653/v1/2024.acl-long.329},
+  url       = {https://aclanthology.org/2024.acl-long.329/}
+}
+
+% ===================== NEW: DATASETS AND TOOLS =====================
+
+@inproceedings{basile2019hateval,
+  title     = {{S}em{E}val-2019 {Task} 5: Multilingual Detection of Hate Speech Against Immigrants and Women in {T}witter},
+  author    = {Basile, Valerio and Bosco, Cristina and Fersini, Elisabetta and Nozza, Debora and Patti, Viviana and Rangel Pardo, Francisco Manuel and Rosso, Paolo and Sanguinetti, Manuela},
+  booktitle = {Proceedings of the 13th International Workshop on Semantic Evaluation},
+  month     = jun,
+  year      = {2019},
+  address   = {Minneapolis, Minnesota, USA},
+  publisher = {Association for Computational Linguistics},
+  pages     = {54--63},
+  doi       = {10.18653/v1/S19-2007},
+  url       = {https://aclanthology.org/S19-2007/}
+}
+
+@inproceedings{alhindi2018liarplus,
+  title     = {Where is Your Evidence: Improving Fact-checking by Justification Modeling},
+  author    = {Alhindi, Tariq and Petridis, Savvas and Muresan, Smaranda},
+  booktitle = {Proceedings of the First Workshop on Fact Extraction and {VER}ification ({FEVER})},
+  month     = nov,
+  year      = {2018},
+  address   = {Brussels, Belgium},
+  publisher = {Association for Computational Linguistics},
+  pages     = {85--90},
+  doi       = {10.18653/v1/W18-5513},
+  url       = {https://aclanthology.org/W18-5513/}
+}
+
+@inproceedings{thorne2018fever,
+  title     = {{FEVER}: a Large-scale Dataset for Fact Extraction and {VER}ification},
+  author    = {Thorne, James and Vlachos, Andreas and Christodoulopoulos, Christos and Mittal, Arpit},
+  booktitle = {Proceedings of the 2018 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)},
+  month     = jun,
+  year      = {2018},
+  address   = {New Orleans, Louisiana},
+  publisher = {Association for Computational Linguistics},
+  pages     = {809--819},
+  doi       = {10.18653/v1/N18-1074},
+  url       = {https://aclanthology.org/N18-1074/}
+}
+
+@inproceedings{hassan2017claimbuster,
+  title     = {Toward Automated Fact-Checking: Detecting Check-worthy Factual Claims by {ClaimBuster}},
+  author    = {Hassan, Naeemul and Arslan, Fatma and Li, Chengkai and Tremayne, Mark},
+  booktitle = {Proceedings of the 23rd {ACM} {SIGKDD} International Conference on Knowledge Discovery and Data Mining},
+  year      = {2017},
+  address   = {Halifax, NS, Canada},
+  publisher = {Association for Computing Machinery},
+  pages     = {1803--1812},
+  doi       = {10.1145/3097983.3098131}
+}
+
+@inproceedings{mathew2021hatexplain,
+  title     = {{HateXplain}: A Benchmark Dataset for Explainable Hate Speech Detection},
+  author    = {Mathew, Binny and Saha, Punyajoy and Yimam, Seid Muhie and Biemann, Chris and Goyal, Pawan and Mukherjee, Animesh},
+  booktitle = {Proceedings of the {AAAI} Conference on Artificial Intelligence},
+  address = {Online},
+  publisher = {AAAI Press},
+  volume    = {35},
+  pages     = {14867--14875},
+  year      = {2021},
+  doi       = {10.1609/aaai.v35i17.17745},
+  url       = {https://ojs.aaai.org/index.php/AAAI/article/view/17745}
+}
+
+@misc{jigsaw2018toxic,
+  author       = {{Jigsaw} and {Conversation AI}},
+  title        = {Toxic Comment Classification Challenge: Identify and Classify Toxic Online Comments},
+  year         = {2018},
+  howpublished = {Kaggle competition, December 2017--March 2018},
+  url          = {https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge}
+}
+
+@misc{kokhlikyan2020captum,
+  title         = {Captum: A Unified and Generic Model Interpretability Library for {PyTorch}},
+  author        = {Kokhlikyan, Narine and Miglani, Vivek and Martin, Miguel and Wang, Edward and Alsallakh, Bilal and Reynolds, Jonathan and Melnikov, Alexander and Kliushkina, Natalia and Araya, Carlos and Yan, Siqi and Reblitz-Richardson, Orion},
+  year          = {2020},
+  eprint        = {2009.07896},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2009.07896}
+}
+
+@inproceedings{tenney2020lit,
+  title     = {The {Language Interpretability Tool}: Extensible, Interactive Visualizations and Analysis for {NLP} Models},
+  author    = {Tenney, Ian and Wexler, James and Bastings, Jasmijn and Bolukbasi, Tolga and Coenen, Andy and Gehrmann, Sebastian and Jiang, Ellen and Pushkarna, Mahima and Radebaugh, Carey and Reif, Emily and Yuan, Ann},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  month     = oct,
+  year      = {2020},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {107--118},
+  doi       = {10.18653/v1/2020.emnlp-demos.15},
+  url       = {https://aclanthology.org/2020.emnlp-demos.15/}
+}
+
+@inproceedings{vig2019bertviz,
+  title     = {A Multiscale Visualization of Attention in the {T}ransformer Model},
+  author    = {Vig, Jesse},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics: System Demonstrations},
+  month     = jul,
+  year      = {2019},
+  address   = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  pages     = {37--42},
+  doi       = {10.18653/v1/P19-3007},
+  url       = {https://aclanthology.org/P19-3007/}
+}
+
+@inproceedings{alammar2021ecco,
+  title     = {Ecco: An Open Source Library for the Explainability of Transformer Language Models},
+  author    = {Alammar, J},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations},
+  month     = aug,
+  year      = {2021},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {249--257},
+  doi       = {10.18653/v1/2021.acl-demo.30},
+  url       = {https://aclanthology.org/2021.acl-demo.30/}
+}
+
+@inproceedings{wallace2019allennlp,
+  title     = {{AllenNLP} Interpret: A Framework for Explaining Predictions of {NLP} Models},
+  author    = {Wallace, Eric and Tuyls, Jens and Wang, Junlin and Subramanian, Sanjay and Gardner, Matt and Singh, Sameer},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing ({EMNLP}-{IJCNLP}): System Demonstrations},
+  month     = nov,
+  year      = {2019},
+  address   = {Hong Kong, China},
+  publisher = {Association for Computational Linguistics},
+  pages     = {7--12},
+  doi       = {10.18653/v1/D19-3002},
+  url       = {https://aclanthology.org/D19-3002/}
+}
+
+@misc{nori2019interpretml,
+  title         = {{InterpretML}: A Unified Framework for Machine Learning Interpretability},
+  author        = {Nori, Harsha and Jenkins, Samuel and Koch, Paul and Caruana, Rich},
+  year          = {2019},
+  eprint        = {1909.09223},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/1909.09223}
+}
+
+@misc{nanda2022transformerlens,
+  title        = {{TransformerLens}},
+  author       = {Nanda, Neel and Bloom, Joseph},
+  year         = {2022},
+  howpublished = {\url{https://github.com/TransformerLensOrg/TransformerLens}},
+  note         = {Open-source library for mechanistic interpretability of GPT-style language models}
+}
+
+@misc{neuronpedia2023,
+  title  = {Neuronpedia: Interactive Reference and Tooling for Analyzing Neural Networks},
+  author = {Lin, Johnny},
+  year   = {2023},
+  url    = {https://www.neuronpedia.org},
+  note   = {Software available from neuronpedia.org}
+}
+
+@inproceedings{khattab2023dspy,
+  title     = {{DSPy}: Compiling Declarative Language Model Calls into Self-Improving Pipelines},
+  author    = {Khattab, Omar and Singhvi, Arnav and Maheshwari, Paridhi and Zhang, Zhiyuan and Santhanam, Keshav and Vardhamanan, Sri and Haq, Saiful and Sharma, Ashutosh and Joshi, Thomas T. and Moazam, Hanna and Miller, Heather and Zaharia, Matei and Potts, Christopher},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  address = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year      = {2024},
+  url       = {https://openreview.net/forum?id=sY5N0zY5Od}
+}
+
+% ===================== NEW: FOUNDATIONS, RELATED SURVEYS, AND DOMAIN EXEMPLARS =====================
+
+@article{lipton2018mythos,
+  author    = {Zachary C. Lipton},
+  title     = {The Mythos of Model Interpretability},
+  journal   = {Queue},
+  volume    = {16},
+  number    = {3},
+  pages     = {31--57},
+  year      = {2018},
+  publisher = {ACM},
+  doi       = {10.1145/3236386.3241340}
+}
+
+@misc{doshivelez2017rigorous,
+  author        = {Finale Doshi-Velez and Been Kim},
+  title         = {Towards A Rigorous Science of Interpretable Machine Learning},
+  year          = {2017},
+  eprint        = {1702.08608},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ML},
+  url           = {https://arxiv.org/abs/1702.08608}
+}
+
+@article{miller2019explanation,
+  author  = {Tim Miller},
+  title   = {Explanation in artificial intelligence: Insights from the social sciences},
+  journal = {Artificial Intelligence},
+  volume  = {267},
+  pages   = {1--38},
+  year    = {2019},
+  doi     = {10.1016/j.artint.2018.07.007}
+}
+
+@article{guidotti2018survey,
+  author    = {Riccardo Guidotti and Anna Monreale and Salvatore Ruggieri and Franco Turini and Fosca Giannotti and Dino Pedreschi},
+  title     = {A Survey of Methods for Explaining Black Box Models},
+  journal   = {ACM Computing Surveys},
+  volume    = {51},
+  number    = {5},
+  pages     = {93:1--93:42},
+  year      = {2018},
+  publisher = {ACM},
+  doi       = {10.1145/3236009}
+}
+
+@misc{mohammadi2025explainability,
+  author        = {Hadi Mohammadi and Ayoub Bagheri and Anastasia Giachanou and Daniel L. Oberski},
+  title         = {Explainability in Practice: A Survey of Explainable {NLP} Across Various Domains},
+  year          = {2025},
+  eprint        = {2502.00837},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2502.00837}
+}
+
+@misc{luo2024understanding,
+  author        = {Haoyan Luo and Lucia Specia},
+  title         = {From Understanding to Utilization: A Survey on Explainability for Large Language Models},
+  year          = {2024},
+  eprint        = {2401.12874},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2401.12874}
+}
+
+@inproceedings{rauker2023transparent,
+  author    = {Tilman R{\"a}uker and Anson Ho and Stephen Casper and Dylan Hadfield-Menell},
+  title     = {Toward Transparent {AI}: A Survey on Interpreting the Inner Structures of Deep Neural Networks},
+  booktitle = {2023 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)},
+  pages     = {464--483},
+  year      = {2023},
+  address   = {Raleigh, NC, USA},
+  publisher = {IEEE},
+  doi       = {10.1109/SaTML54575.2023.00039}
+}
+
+@inproceedings{mullenbach2018explainable,
+  author    = {Mullenbach, James and Wiegreffe, Sarah and Duke, Jon and Sun, Jimeng and Eisenstein, Jacob},
+  title     = {Explainable Prediction of Medical Codes from Clinical Text},
+  booktitle = {Proceedings of the 2018 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)},
+  month     = jun,
+  year      = {2018},
+  address   = {New Orleans, Louisiana},
+  publisher = {Association for Computational Linguistics},
+  pages     = {1101--1111},
+  doi       = {10.18653/v1/N18-1100},
+  url       = {https://aclanthology.org/N18-1100/}
+}
+
+@inproceedings{kotonya2020explainable,
+  author    = {Kotonya, Neema and Toni, Francesca},
+  title     = {Explainable Automated Fact-Checking: A Survey},
+  booktitle = {Proceedings of the 28th International Conference on Computational Linguistics},
+  month     = dec,
+  year      = {2020},
+  address   = {Barcelona, Spain (Online)},
+  publisher = {International Committee on Computational Linguistics},
+  pages     = {5430--5443},
+  doi       = {10.18653/v1/2020.coling-main.474},
+  url       = {https://aclanthology.org/2020.coling-main.474/}
+}
+
+@inproceedings{atanasova2020generating,
+  author    = {Atanasova, Pepa and Simonsen, Jakob Grue and Lioma, Christina and Augenstein, Isabelle},
+  title     = {Generating Fact Checking Explanations},
+  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  month     = jul,
+  year      = {2020},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {7352--7364},
+  doi       = {10.18653/v1/2020.acl-main.656},
+  url       = {https://aclanthology.org/2020.acl-main.656/}
+}
+
+@inproceedings{wu2021polyjuice,
+  author    = {Wu, Tongshuang and Ribeiro, Marco Tulio and Heer, Jeffrey and Weld, Daniel},
+  title     = {Polyjuice: Generating Counterfactuals for Explaining, Evaluating, and Improving Models},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  month     = aug,
+  year      = {2021},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {6707--6723},
+  doi       = {10.18653/v1/2021.acl-long.523},
+  url       = {https://aclanthology.org/2021.acl-long.523/}
+}
+% ===================== NEW: QA-PASS ADDITIONS (verified July 2026) =====================
+
+@inproceedings{devlin2019bert,
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  title = {{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  year = {2019},
+  address = {Minneapolis, Minnesota},
+  publisher = {Association for Computational Linguistics},
+  pages = {4171--4186},
+  doi = {10.18653/v1/N19-1423},
+  url = {https://aclanthology.org/N19-1423/}
+}
+
+@inproceedings{brown2020language,
+  author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
+  title = {Language Models are Few-Shot Learners},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume = {33},
+  pages = {1877--1901},
+  publisher = {Curran Associates, Inc.},
+  year = {2020},
+  url = {https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html}
+}
+
+@article{wei2022emergent,
+  author = {Wei, Jason and Tay, Yi and Bommasani, Rishi and Raffel, Colin and Zoph, Barret and Borgeaud, Sebastian and Yogatama, Dani and Bosma, Maarten and Zhou, Denny and Metzler, Donald and Chi, Ed H. and Hashimoto, Tatsunori and Vinyals, Oriol and Liang, Percy and Dean, Jeff and Fedus, William},
+  title = {Emergent Abilities of Large Language Models},
+  journal = {Transactions on Machine Learning Research},
+  year = {2022},
+  url = {https://openreview.net/forum?id=yzkSU5zdwD}
+}
+
+@misc{elhage2021mathematical,
+  author = {Elhage, Nelson and Nanda, Neel and Olsson, Catherine and Henighan, Tom and Joseph, Nicholas and Mann, Ben and Askell, Amanda and Bai, Yuntao and Chen, Anna and Conerly, Tom and DasSarma, Nova and Drain, Dawn and Ganguli, Deep and Hatfield-Dodds, Zac and Hernandez, Danny and Jones, Andy and Kernion, Jackson and Lovitt, Liane and Ndousse, Kamal and Amodei, Dario and Brown, Tom and Clark, Jack and Kaplan, Jared and McCandlish, Sam and Olah, Chris},
+  title = {A Mathematical Framework for Transformer Circuits},
+  year = {2021},
+  url = {https://transformer-circuits.pub/2021/framework/index.html},
+  note = {Transformer Circuits Thread}
+}
+
+@inproceedings{tang2015document,
+  author = {Tang, Duyu and Qin, Bing and Liu, Ting},
+  title = {Document Modeling with Gated Recurrent Neural Network for Sentiment Classification},
+  booktitle = {Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing},
+  year = {2015},
+  address = {Lisbon, Portugal},
+  publisher = {Association for Computational Linguistics},
+  pages = {1422--1432},
+  doi = {10.18653/v1/D15-1167},
+  url = {https://aclanthology.org/D15-1167/}
+}
+
+@inproceedings{zhou2016cam,
+  author = {Zhou, Bolei and Khosla, Aditya and Lapedriza, Agata and Oliva, Aude and Torralba, Antonio},
+  title = {Learning Deep Features for Discriminative Localization},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  address = {Las Vegas, NV, USA},
+  publisher = {IEEE},
+  year = {2016},
+  pages = {2921--2929},
+  doi = {10.1109/CVPR.2016.319}
+}
+
+@inproceedings{selvaraju2017gradcam,
+  author = {Selvaraju, Ramprasaath R. and Cogswell, Michael and Das, Abhishek and Vedantam, Ramakrishna and Parikh, Devi and Batra, Dhruv},
+  title = {Grad-{CAM}: Visual Explanations from Deep Networks via Gradient-Based Localization},
+  booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
+  address = {Venice, Italy},
+  publisher = {IEEE},
+  year = {2017},
+  pages = {618--626},
+  doi = {10.1109/ICCV.2017.74}
+}
+
+@inproceedings{zheng2023judging,
+  author = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric and Zhang, Hao and Gonzalez, Joseph and Stoica, Ion},
+  title = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  volume = {36},
+  pages = {46595--46623},
+  publisher = {Curran Associates, Inc.},
+  year = {2023},
+  note = {Datasets and Benchmarks Track},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html}
+}
+
+@misc{euomnibus2026,
+  author = {{Council of the European Union}},
+  title = {Artificial Intelligence: Council Gives Final Green Light to Simplify and Streamline Rules},
+  year = {2026},
+  howpublished = {Council of the {EU} press release},
+  url = {https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/},
+  note = {Digital omnibus regulation amending Regulation (EU) 2024/1689 (AI Act); postpones high-risk obligations to 2 December 2027 (Annex III stand-alone systems) and 2 August 2028 (Annex I embedded systems); publication in the Official Journal pending at time of access. Accessed July 2026}
+}
+
+@misc{sec2025withdrawal,
+  author = {{U.S. Securities and Exchange Commission}},
+  title = {Withdrawal of Proposed Regulatory Actions},
+  year = {2025},
+  howpublished = {90 Fed. Reg. 25531 (June 17, 2025)},
+  url = {https://www.federalregister.gov/documents/2025/06/17/2025-11110/withdrawal-of-proposed-regulatory-actions},
+  note = {Withdraws, inter alia, File No. S7-12-23, Conflicts of Interest Associated With the Use of Predictive Data Analytics by Broker-Dealers and Investment Advisers. Accessed July 2026}
+}
+
+% ---- Added 2026-07-16: recent-literature sweep (each entry verified against the
+% ---- source URL given in its url field; see SUBMISSION_CHECKLIST.md policy) ----
+
+@misc{korbak2025chain,
+  author        = {Korbak, Tomek and Balesni, Mikita and Barnes, Elizabeth and Bengio, Yoshua and Benton, Joe and Bloom, Joseph and Chen, Mark and Cooney, Alan and others},
+  title         = {Chain of Thought Monitorability: A New and Fragile Opportunity for {AI} Safety},
+  year          = {2025},
+  eprint        = {2507.11473},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2507.11473},
+  note          = {Cross-institutional position paper}
+}
+
+@misc{rai2024practical,
+  author        = {Rai, Daking and Zhou, Yilun and Feng, Shi and Saparov, Abulhair and Yao, Ziyu},
+  title         = {A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models},
+  year          = {2024},
+  eprint        = {2407.02646},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2407.02646},
+  note          = {To appear in {ACM} Transactions on Intelligent Systems and Technology}
+}
+
+@inproceedings{karvonen2025saebench,
+  author    = {Karvonen, Adam and Rager, Can and Lin, Johnny and Tigges, Curt and Bloom, Joseph Isaac and Chanin, David and Lau, Yeu-Tong and Farrell, Eoin and McDougall, Callum and Ayonrinde, Kola and Till, Demian and Wearden, Matthew and Conmy, Arthur and Marks, Samuel and Nanda, Neel},
+  title     = {{SAEBench}: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  address = {Vancouver, Canada},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {267},
+  pages     = {29223--29264},
+  year      = {2025},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v267/karvonen25a.html}
+}
+
+@inproceedings{wu2025axbench,
+  author    = {Wu, Zhengxuan and Arora, Aryaman and Geiger, Atticus and Wang, Zheng and Huang, Jing and Jurafsky, Dan and Manning, Christopher D. and Potts, Christopher},
+  title     = {{AxBench}: Steering {LLMs}? Even Simple Baselines Outperform Sparse Autoencoders},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  address = {Vancouver, Canada},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {267},
+  pages     = {67035--67080},
+  year      = {2025},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v267/wu25a.html}
+}
+
+@inproceedings{kantamneni2025sparse,
+  author    = {Kantamneni, Subhash and Engels, Joshua and Rajamanoharan, Senthooran and Tegmark, Max and Nanda, Neel},
+  title     = {Are Sparse Autoencoders Useful? A Case Study in Sparse Probing},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  address = {Vancouver, Canada},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {267},
+  pages     = {29018--29049},
+  year      = {2025},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v267/kantamneni25a.html}
+}
+
+@inproceedings{arcuschin2025chain,
+  author    = {Arcuschin, Iv{\'a}n and Janiak, Jett and Krzyzanowski, Robert and Rajamanoharan, Senthooran and Nanda, Neel and Conmy, Arthur},
+  title     = {Chain-of-Thought Reasoning In The Wild Is Not Always Faithful},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  publisher = {PMLR},
+  year      = {2026},
+  note      = {To appear; ICML 2026 acceptance recorded on OpenReview, PMLR volume not yet issued at time of writing},
+  url       = {https://arxiv.org/abs/2503.08679}
+}
+
+@inproceedings{matton2025walk,
+  author    = {Matton, Katie and Ness, Robert Osazuwa and Guttag, John and K{\i}c{\i}man, Emre},
+  title     = {Walk the Talk? Measuring the Faithfulness of Large Language Model Explanations},
+  booktitle = {The Thirteenth International Conference on Learning Representations},
+  address = {Singapore},
+  publisher = {OpenReview.net},
+  year      = {2025},
+  url       = {https://openreview.net/forum?id=4ub9gpx9xw}
+}
+
+@inproceedings{dunefsky2024transcoders,
+  author    = {Dunefsky, Jacob and Chlenski, Philippe and Nanda, Neel},
+  title     = {Transcoders Find Interpretable {LLM} Feature Circuits},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {37},
+  publisher = {Curran Associates, Inc.},
+  address = {Red Hook, NY, USA},
+  year      = {2024},
+  pages = {24375--24410},
+  doi = {10.52202/079017-0768},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/2b8f4db0464cc5b6e9d5e6bea4b9f308-Abstract-Conference.html}
+}
+
+@inproceedings{binder2025looking,
+  author    = {Binder, Felix J. and Chua, James and Korbak, Tomek and Sleight, Henry and Hughes, John and Long, Robert and Perez, Ethan and Turpin, Miles and Evans, Owain},
+  title     = {Looking Inward: Language Models Can Learn About Themselves by Introspection},
+  booktitle = {The Thirteenth International Conference on Learning Representations},
+  address = {Singapore},
+  publisher = {OpenReview.net},
+  year      = {2025},
+  url       = {https://openreview.net/forum?id=eb5pkwIB5i}
+}
+
+@misc{marks2025auditing,
+  author        = {Marks, Samuel and Treutlein, Johannes and Bricken, Trenton and Lindsey, Jack and Marcus, Jonathan and Mishra-Sharma, Siddharth and Ziegler, Daniel and Ameisen, Emmanuel and Batson, Joshua and others},
+  title         = {Auditing Language Models for Hidden Objectives},
+  year          = {2025},
+  eprint        = {2503.10965},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2503.10965},
+  note          = {Anthropic}
+}
+
+@misc{bogdan2025thought,
+  author        = {Bogdan, Paul C. and Macar, Uzay and Nanda, Neel and Conmy, Arthur},
+  title         = {Thought Anchors: Which {LLM} Reasoning Steps Matter?},
+  year          = {2025},
+  eprint        = {2506.19143},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2506.19143}
+}
+
+@misc{lindsey2025emergent,
+  author       = {Lindsey, Jack},
+  title        = {Emergent Introspective Awareness in Large Language Models},
+  howpublished = {Transformer Circuits Thread},
+  year         = {2025},
+  url          = {https://transformer-circuits.pub/2025/introspection/index.html},
+  note         = {Accessed July 2026}
+}
+
+@inproceedings{gao2025weightsparse,
+  author    = {Gao, Leo and Rajaram, Achyuta and Coxon, Jacob and Govande, Soham V. and Baker, Bowen and Mossing, Dan},
+  title     = {Weight-sparse Transformers Have Interpretable Circuits},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  publisher = {PMLR},
+  year      = {2026},
+  note      = {To appear; ICML 2026 acceptance recorded on OpenReview (camera-ready revision, submission 7956), PMLR volume not yet issued at time of writing},
+  url       = {https://arxiv.org/abs/2511.13653}
+}
+
+@inproceedings{shu2025survey,
+  author    = {Shu, Dong and Wu, Xuansheng and Zhao, Haiyan and Rai, Daking and Yao, Ziyu and Liu, Ninghao and Du, Mengnan},
+  title     = {A Survey on Sparse Autoencoders: Interpreting the Internal Mechanisms of Large Language Models},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+  pages     = {1690--1712},
+  year      = {2025},
+  address   = {Suzhou, China},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2025.findings-emnlp.89},
+  url       = {https://aclanthology.org/2025.findings-emnlp.89/}
+}
+
+@misc{eugpai2025,
+  author       = {{European Commission}},
+  title        = {The General-Purpose {AI} Code of Practice},
+  year         = {2025},
+  howpublished = {European Commission, Shaping Europe's Digital Future},
+  url          = {https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai},
+  note         = {Voluntary code of practice (chapters: Transparency, Copyright, Safety and Security) supporting compliance with Regulation (EU) 2024/1689 for general-purpose AI models; published 10 July 2025. Accessed July 2026}
+}
+
+% ---- Added 2026-07-18: first-author works (verified against source URLs) ----
+
+@article{mohammadi2024transparent,
+  author  = {Mohammadi, Hadi and Giachanou, Anastasia and Bagheri, Ayoub},
+  title   = {A Transparent Pipeline for Identifying Sexism in Social Media: Combining Explainability with Model Prediction},
+  journal = {Applied Sciences},
+  volume  = {14},
+  number  = {19},
+  pages   = {8620},
+  year    = {2024},
+  doi     = {10.3390/app14198620},
+  url     = {https://www.mdpi.com/2076-3417/14/19/8620}
+}
+
+@inproceedings{mohammadi2025reliability,
+  author    = {Mohammadi, Hadi and Shahedi, Tina and Mosteiro, Pablo and Poesio, Massimo and Bagheri, Ayoub and Giachanou, Anastasia},
+  title     = {Assessing the Reliability of {LLMs} Annotations in the Context of Demographic Bias and Model Explanation},
+  booktitle = {Proceedings of the 6th Workshop on Gender Bias in Natural Language Processing ({GeBNLP})},
+  pages     = {92--104},
+  address   = {Vienna, Austria},
+  publisher = {Association for Computational Linguistics},
+  year      = {2025},
+  doi       = {10.18653/v1/2025.gebnlp-1.9},
+  url       = {https://aclanthology.org/2025.gebnlp-1.9/}
+}
+
+@inproceedings{mohammadi2025evalmoraal,
+  author    = {Mohammadi, Hadi and Giachanou, Anastasia and Bagheri, Robert A.},
+  title     = {{EvalMORAAL}: Interpretable Chain-of-Thought and {LLM}-as-Judge Evaluation for Moral Alignment in Large Language Models},
+  booktitle = {Proceedings of the 15th Joint Conference on Lexical and Computational Semantics (*{SEM} 2026)},
+  pages     = {497--515},
+  address   = {San Diego, California, United States},
+  publisher = {Association for Computational Linguistics},
+  year      = {2026},
+  doi       = {10.18653/v1/2026.starsem-conference.34},
+  url       = {https://aclanthology.org/2026.starsem-conference.34/}
+}
+
+@misc{mohammadi2025grpo,
+  author        = {Mohammadi, Hadi and Koz{\'a}k, Tam{\'a}s and Giachanou, Anastasia},
+  title         = {Evaluating {GRPO} and {DPO} for Faithful Chain-of-Thought Reasoning in {LLMs}},
+  year          = {2025},
+  eprint        = {2512.22631},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2512.22631}
+}
+
+% ============================================================================
+% Additions (2026-08-05 pass): coverage gaps in rationale extraction, probing,
+% counterfactual explanation, causal/circuit analysis, concept-based methods,
+% human-centered evaluation, plus further first-author work by H. Mohammadi.
+% Verified against ACL Anthology / OpenReview / Semantic Scholar records.
+% ============================================================================
+
+@inproceedings{lei2016rationalizing,
+  author    = {Lei, Tao and Barzilay, Regina and Jaakkola, Tommi},
+  title     = {Rationalizing Neural Predictions},
+  booktitle = {Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {107--117},
+  address   = {Austin, Texas},
+  publisher = {Association for Computational Linguistics},
+  year      = {2016},
+  doi       = {10.18653/v1/D16-1011}
+}
+
+@inproceedings{bastings2019interpretable,
+  author    = {Bastings, Jasmijn and Aziz, Wilker and Titov, Ivan},
+  title     = {Interpretable Neural Predictions with Differentiable Binary Variables},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  pages     = {2963--2977},
+  address   = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/P19-1284}
+}
+
+@inproceedings{jain2020fresh,
+  author    = {Jain, Sarthak and Wiegreffe, Sarah and Pinter, Yuval and Wallace, Byron C.},
+  title     = {Learning to Faithfully Rationalize by Construction},
+  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages     = {4459--4473},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  year      = {2020},
+  doi       = {10.18653/v1/2020.acl-main.409}
+}
+
+@inproceedings{hewitt2019structural,
+  author    = {Hewitt, John and Manning, Christopher D.},
+  title     = {A Structural Probe for Finding Syntax in Word Representations},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  pages     = {4129--4138},
+  address   = {Minneapolis, Minnesota},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/N19-1419}
+}
+
+@inproceedings{hewitt2019control,
+  author    = {Hewitt, John and Liang, Percy},
+  title     = {Designing and Interpreting Probes with Control Tasks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  pages     = {2733--2743},
+  address   = {Hong Kong, China},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/D19-1275}
+}
+
+@article{rogers2020primer,
+  author    = {Rogers, Anna and Kovaleva, Olga and Rumshisky, Anna},
+  title     = {A Primer in {BERTology}: What We Know About How {BERT} Works},
+  journal   = {Transactions of the Association for Computational Linguistics},
+  volume    = {8},
+  pages     = {842--866},
+  year      = {2020},
+  doi       = {10.1162/tacl_a_00349}
+}
+
+@inproceedings{clark2019what,
+  author    = {Clark, Kevin and Khandelwal, Urvashi and Levy, Omer and Manning, Christopher D.},
+  title     = {What Does {BERT} Look at? An Analysis of {BERT}'s Attention},
+  booktitle = {Proceedings of the 2019 ACL Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP},
+  pages     = {276--286},
+  address   = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/W19-4828}
+}
+
+@inproceedings{tenney2019bert,
+  author    = {Tenney, Ian and Das, Dipanjan and Pavlick, Ellie},
+  title     = {{BERT} Rediscovers the Classical {NLP} Pipeline},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  pages     = {4593--4601},
+  address   = {Florence, Italy},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/P19-1452}
+}
+
+@inproceedings{ross2021mice,
+  author    = {Ross, Alexis and Marasovi{\'c}, Ana and Peters, Matthew E.},
+  title     = {Explaining {NLP} Models via Minimal Contrastive Editing ({MiCE})},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021},
+  pages     = {3840--3852},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  year      = {2021},
+  doi       = {10.18653/v1/2021.findings-acl.336}
+}
+
+@inproceedings{wiegreffe2021measuring,
+  author    = {Wiegreffe, Sarah and Marasovi{\'c}, Ana and Smith, Noah A.},
+  title     = {Measuring Association Between Labels and Free-Text Rationales},
+  booktitle = {Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {10266--10284},
+  address   = {Online and Punta Cana, Dominican Republic},
+  publisher = {Association for Computational Linguistics},
+  year      = {2021},
+  doi       = {10.18653/v1/2021.emnlp-main.804}
+}
+
+@inproceedings{zaman2026chain,
+  author    = {Zaman, Kerem and Srivastava, Shashank},
+  title     = {Is Chain-of-Thought Really Not Explainability? {Chain-of-Thought} Can Be Faithful without Hint Verbalization},
+  booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages     = {48008--48030},
+  address   = {San Diego, California, United States},
+  publisher = {Association for Computational Linguistics},
+  year      = {2026},
+  doi       = {10.18653/v1/2026.acl-long.2217}
+}
+
+@inproceedings{rimsky2024steering,
+  author    = {Rimsky, Nina and Gabrieli, Nick and Schulz, Julian and Tong, Meg and Hubinger, Evan and Turner, Alexander},
+  title     = {Steering {Llama} 2 via Contrastive Activation Addition},
+  booktitle = {Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages     = {15504--15522},
+  address   = {Bangkok, Thailand},
+  publisher = {Association for Computational Linguistics},
+  year      = {2024},
+  doi       = {10.18653/v1/2024.acl-long.828}
+}
+
+@inproceedings{adebayo2018sanity,
+  author    = {Adebayo, Julius and Gilmer, Justin and Muelly, Michael and Goodfellow, Ian and Hardt, Moritz and Kim, Been},
+  title     = {Sanity Checks for Saliency Maps},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address   = {Red Hook, NY, USA},
+  publisher = {Curran Associates, Inc.},
+  volume    = {31},
+  year      = {2018}
+}
+
+@inproceedings{vig2020causal,
+  author    = {Vig, Jesse and Gehrmann, Sebastian and Belinkov, Yonatan and Qian, Sharon and Nevo, Daniel and Singer, Yaron and Shieber, Stuart},
+  title     = {Investigating Gender Bias in Language Models Using Causal Mediation Analysis},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address   = {Red Hook, NY, USA},
+  publisher = {Curran Associates, Inc.},
+  volume    = {33},
+  pages     = {12388--12401},
+  year      = {2020}
+}
+
+@inproceedings{wang2023ioi,
+  author    = {Wang, Kevin Ro and Variengien, Alexandre and Conmy, Arthur and Shlegeris, Buck and Steinhardt, Jacob},
+  title     = {Interpretability in the Wild: A Circuit for Indirect Object Identification in {GPT-2} Small},
+  booktitle = {The Eleventh International Conference on Learning Representations},
+  address   = {Kigali, Rwanda},
+  publisher = {OpenReview.net},
+  year      = {2023}
+}
+
+@inproceedings{zhang2024patching,
+  author    = {Zhang, Fred and Nanda, Neel},
+  title     = {Towards Best Practices of Activation Patching in Language Models: Metrics and Methods},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  address   = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year      = {2024}
+}
+
+@inproceedings{li2023othello,
+  author    = {Li, Kenneth and Hopkins, Aspen K. and Bau, David and Vi{\'e}gas, Fernanda and Pfister, Hanspeter and Wattenberg, Martin},
+  title     = {Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task},
+  booktitle = {The Eleventh International Conference on Learning Representations},
+  address   = {Kigali, Rwanda},
+  publisher = {OpenReview.net},
+  year      = {2023}
+}
+
+@inproceedings{burns2023discovering,
+  author    = {Burns, Collin and Ye, Haotian and Klein, Dan and Steinhardt, Jacob},
+  title     = {Discovering Latent Knowledge in Language Models Without Supervision},
+  booktitle = {The Eleventh International Conference on Learning Representations},
+  address   = {Kigali, Rwanda},
+  publisher = {OpenReview.net},
+  year      = {2023}
+}
+
+@inproceedings{kaushik2020counterfactual,
+  author    = {Kaushik, Divyansh and Hovy, Eduard and Lipton, Zachary C.},
+  title     = {Learning the Difference that Makes a Difference with Counterfactually-Augmented Data},
+  booktitle = {International Conference on Learning Representations},
+  address   = {Virtual},
+  publisher = {OpenReview.net},
+  year      = {2020}
+}
+
+@inproceedings{koh2020concept,
+  author    = {Koh, Pang Wei and Nguyen, Thao and Tang, Yew Siang and Mussmann, Stephen and Pierson, Emma and Kim, Been and Liang, Percy},
+  title     = {Concept Bottleneck Models},
+  booktitle = {Proceedings of the 37th International Conference on Machine Learning},
+  address   = {Virtual},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {119},
+  pages     = {5338--5348},
+  year      = {2020},
+  publisher = {PMLR}
+}
+
+@inproceedings{wiegreffe2021teach,
+  author    = {Wiegreffe, Sarah and Marasovi{\'c}, Ana},
+  title     = {Teach Me to Explain: A Review of Datasets for Explainable Natural Language Processing},
+  booktitle = {Advances in Neural Information Processing Systems Track on Datasets and Benchmarks},
+  address   = {Red Hook, NY, USA},
+  publisher = {Curran Associates, Inc.},
+  volume    = {1},
+  year      = {2021}
+}
+
+@inproceedings{bansal2021whole,
+  author    = {Bansal, Gagan and Wu, Tongshuang and Zhou, Joyce and Fok, Raymond and Nushi, Besmira and Kamar, Ece and Ribeiro, Marco Tulio and Weld, Daniel},
+  title     = {Does the Whole Exceed its Parts? The Effect of {AI} Explanations on Complementary Team Performance},
+  booktitle = {Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems},
+  articleno = {81},
+  numpages  = {16},
+  address   = {New York, NY, USA},
+  publisher = {Association for Computing Machinery},
+  year      = {2021},
+  doi       = {10.1145/3411764.3445717}
+}
+
+@inproceedings{hanna2023greaterthan,
+  author    = {Hanna, Michael and Liu, Ollie and Variengien, Alexandre},
+  title     = {How Does {GPT-2} Compute Greater-Than? Interpreting Mathematical Abilities in a Pre-Trained Language Model},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address   = {Red Hook, NY, USA},
+  publisher = {Curran Associates, Inc.},
+  volume    = {36},
+  year      = {2023},
+  eprint    = {2305.00586},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.LG}
+}
+
+@inproceedings{park2024linear,
+  author    = {Park, Kiho and Choe, Yo Joong and Veitch, Victor},
+  title     = {The Linear Representation Hypothesis and the Geometry of Large Language Models},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  address   = {Vienna, Austria},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {235},
+  pages     = {39643--39666},
+  year      = {2024},
+  publisher = {PMLR}
+}
+
+@misc{agarwal2024faithfulness,
+  author        = {Agarwal, Chirag and Tanneru, Sree Harsha and Lakkaraju, Himabindu},
+  title         = {Faithfulness vs. Plausibility: On the (Un)Reliability of Explanations from Large Language Models},
+  year          = {2024},
+  eprint        = {2402.04614},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2402.04614}
+}
+
+@misc{mohammadi2025token,
+  author        = {Mohammadi, Hadi and Giachanou, Anastasia and Oberski, Daniel L. and Bagheri, Ayoub},
+  title         = {Explainability-Based Token Replacement on {LLM}-Generated Text},
+  year          = {2025},
+  eprint        = {2506.04050},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2506.04050}
+}
+
+@inproceedings{mohammadi2025morality,
+  author    = {Mohammadi, Hadi and Meijer, Yasmeen F. S. S. and Papadopoulou, Efthymia and Bagheri, Ayoub},
+  title     = {Do Large Language Models Understand Morality Across Cultures?},
+  booktitle = {Proceedings of the 2nd {LUHME} Workshop},
+  pages     = {30--39},
+  address = {Bologna, Italy},
+  url = {https://aclanthology.org/2025.luhme-1.3/},
+  year      = {2025}
+}
+
+@misc{mohammadi2025cultural,
+  author        = {Mohammadi, Hadi and Papadopoulou, Efthymia and Meijer, Yasmeen F. S. S. and Bagheri, Ayoub},
+  title         = {Exploring Cultural Variations in Moral Judgments with Large Language Models},
+  year          = {2025},
+  eprint        = {2506.12433},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2506.12433}
+}
+
+@inproceedings{mohammadi2023sexism,
+  author    = {Mohammadi, Hadi and Giachanou, Anastasia and Bagheri, Ayoub},
+  title     = {Towards Robust Online Sexism Detection: A Multi-Model Approach with {BERT}, {XLM-RoBERTa}, and {DistilBERT} for {EXIST} 2023 Tasks},
+  booktitle = {Working Notes of CLEF 2023: Conference and Labs of the Evaluation Forum},
+  pages     = {1000--1011},
+  year      = {2023}
+}
+
+@inproceedings{ferrando2022alti,
+  author    = {Ferrando, Javier and G{\'a}llego, Gerard I. and Costa-juss{\`a}, Marta R.},
+  title     = {Measuring the Mixing of Contextual Information in the Transformer},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {8698--8714},
+  year      = {2022},
+  address   = {Abu Dhabi, United Arab Emirates},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2022.emnlp-main.595},
+  url       = {https://aclanthology.org/2022.emnlp-main.595/}
+}
+
+@inproceedings{mohebbi2023valuezeroing,
+  author    = {Mohebbi, Hosein and Zuidema, Willem and Chrupa{\l}a, Grzegorz and Alishahi, Afra},
+  title     = {Quantifying Context Mixing in Transformers},
+  booktitle = {Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics},
+  pages     = {3378--3400},
+  year      = {2023},
+  address   = {Dubrovnik, Croatia},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2023.eacl-main.245},
+  url       = {https://aclanthology.org/2023.eacl-main.245/}
+}
+
+@inproceedings{yin2022contrastive,
+  author    = {Yin, Kayo and Neubig, Graham},
+  title     = {Interpreting Language Models with Contrastive Explanations},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {184--198},
+  year      = {2022},
+  address   = {Abu Dhabi, United Arab Emirates},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2022.emnlp-main.14},
+  url       = {https://aclanthology.org/2022.emnlp-main.14/}
+}
+
+@inproceedings{gao2023citations,
+  author    = {Gao, Tianyu and Yen, Howard and Yu, Jiatong and Chen, Danqi},
+  title     = {Enabling Large Language Models to Generate Text with Citations},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {6465--6488},
+  year      = {2023},
+  address   = {Singapore},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2023.emnlp-main.398},
+  url       = {https://aclanthology.org/2023.emnlp-main.398/}
+}
+
+@misc{grosse2023influence,
+  author        = {Grosse, Roger and Bae, Juhan and Anil, Cem and Elhage, Nelson and Tamkin, Alex and Tajdini, Amirhossein and Steiner, Benoit and Li, Dustin and Durmus, Esin and Perez, Ethan and Hubinger, Evan and Luko{\v{s}}i{\=u}t{\.e}, Kamil{\.e} and Nguyen, Karina and Joseph, Nicholas and McCandlish, Sam and Kaplan, Jared and Bowman, Samuel R.},
+  title         = {Studying Large Language Model Generalization with Influence Functions},
+  year          = {2023},
+  eprint        = {2308.03296},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2308.03296},
+  note          = {Anthropic technical report; not peer reviewed}
+}
+
+% ================================================================
+% Added 2026-08-08 (bibliography verification pass 2).
+% Each entry below was verified against Crossref, OpenReview and/or
+% the official PMLR / ACL Anthology proceedings listing.
+% ================================================================
+
+@inproceedings{arditi2024refusal,
+  author = {Arditi, Andy and Obeso, Oscar and Syed, Aaquib and Paleka, Daniel and Panickssery, Nina and Gurnee, Wes and Nanda, Neel},
+  title = {Refusal in Language Models Is Mediated by a Single Direction},
+  booktitle = {Advances in Neural Information Processing Systems},
+  address = {Red Hook, NY, USA},
+  publisher = {Curran Associates, Inc.},
+  volume = {37},
+  pages = {136037--136083},
+  year = {2024},
+  doi = {10.52202/079017-4322}
+}
+
+@inproceedings{marks2025feature,
+  author = {Marks, Samuel and Rager, Can and Michaud, Eric J. and Belinkov, Yonatan and Bau, David and Mueller, Aaron},
+  title = {Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models},
+  booktitle = {The Thirteenth International Conference on Learning Representations},
+  address = {Singapore},
+  publisher = {OpenReview.net},
+  year = {2025},
+  url = {https://openreview.net/forum?id=I4e82CIDxv}
+}
+
+@inproceedings{mueller2025mib,
+  author = {Mueller, Aaron and Geiger, Atticus and Wiegreffe, Sarah and Arad, Dana and Arcuschin, Iv{\'a}n and Belfki, Adam and Chan, Yik Siu and Fiotto-Kaufman, Jaden and Haklay, Tal and Hanna, Michael and others},
+  title = {{MIB}: A Mechanistic Interpretability Benchmark},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  address = {Vancouver, Canada},
+  series = {Proceedings of Machine Learning Research},
+  volume = {267},
+  pages = {45069--45108},
+  year = {2025},
+  publisher = {PMLR},
+  url = {https://proceedings.mlr.press/v267/mueller25a.html}
+}
+
+@inproceedings{madsen2024faithfulness,
+  author = {Madsen, Andreas and Reddy, Siva and Chandar, Sarath},
+  title = {Faithfulness Measurable Masked Language Models},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  address = {Vienna, Austria},
+  series = {Proceedings of Machine Learning Research},
+  volume = {235},
+  pages = {34161--34202},
+  year = {2024},
+  publisher = {PMLR},
+  url = {https://proceedings.mlr.press/v235/madsen24a.html}
+}
+
+@inproceedings{saphra2024mechanistic,
+  author = {Saphra, Naomi and Wiegreffe, Sarah},
+  title = {Mechanistic?},
+  booktitle = {Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP},
+  address = {Miami, Florida, USA},
+  publisher = {Association for Computational Linguistics},
+  pages = {480--498},
+  year = {2024},
+  doi = {10.18653/v1/2024.blackboxnlp-1.30}
+}
+
+@inproceedings{fiotto2025nnsight,
+  author = {Fiotto-Kaufman, Jaden and Loftus, Alexander R. and Todd, Eric and Brinkmann, Jannik and Pal, Koyena and Troitskii, Dmitrii and Ripa, Michael and Belfki, Adam and others},
+  title = {{NNsight} and {NDIF}: Democratizing Access to Open-Weight Foundation Model Internals},
+  booktitle = {The Thirteenth International Conference on Learning Representations},
+  address = {Singapore},
+  publisher = {OpenReview.net},
+  year = {2025},
+  url = {https://openreview.net/forum?id=MxbEiFRf39}
+}
+
+@inproceedings{huang2024selfcorrect,
+  author = {Huang, Jie and Chen, Xinyun and Mishra, Swaroop and Zheng, Huaixiu Steven and Yu, Adams Wei and Song, Xinying and Zhou, Denny},
+  title = {Large Language Models Cannot Self-Correct Reasoning Yet},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  address = {Vienna, Austria},
+  publisher = {OpenReview.net},
+  year = {2024},
+  url = {https://openreview.net/forum?id=IkmD3fKBPQ}
+}
+
+@inproceedings{lai2023science,
+  author = {Lai, Vivian and Chen, Chacha and Smith-Renner, Alison and Liao, Q. Vera and Tan, Chenhao},
+  title = {Towards a Science of Human-{AI} Decision Making: An Overview of Design Space in Empirical Human-Subject Studies},
+  booktitle = {Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency},
+  pages = {1369--1385},
+  year = {2023},
+  publisher = {Association for Computing Machinery},
+  doi = {10.1145/3593013.3594087}
+}
