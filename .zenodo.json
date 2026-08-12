@@ -1,0 +1,23 @@
+{
+  "title": "Explainable NLP in the Era of Large Language Models: Survey Materials",
+  "description": "Figures, figure-generation code, a machine-readable taxonomy, and the full bibliography for the survey 'Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance' (Hadi Mohammadi and Tina Shahedi, Utrecht University, under review at the Journal of Artificial Intelligence Research). An earlier and shorter version of the survey is archived at doi:10.5281/zenodo.18521290.",
+  "creators": [
+    {"name": "Mohammadi, Hadi", "orcid": "0000-0003-0860-9200", "affiliation": "Utrecht University"},
+    {"name": "Shahedi, Tina", "orcid": "0009-0000-8543-1683", "affiliation": "Utrecht University"}
+  ],
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "keywords": [
+    "explainable NLP",
+    "XNLP",
+    "interpretability",
+    "natural language processing",
+    "large language models",
+    "mechanistic interpretability",
+    "survey",
+    "taxonomy"
+  ],
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.18521290", "relation": "isSupplementTo", "scheme": "doi"}
+  ]
+}

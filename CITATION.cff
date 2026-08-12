@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite the survey (see preferred-citation)."
+title: "Explainable NLP in the Era of Large Language Models: Survey Materials"
+type: software
+license: CC-BY-4.0
+repository-code: "https://github.com/mohammadi-hadi/xnlp-llm-survey"
+authors:
+  - given-names: "Hadi"
+    family-names: "Mohammadi"
+    orcid: "https://orcid.org/0000-0003-0860-9200"
+    affiliation: "Utrecht University"
+  - given-names: "Tina"
+    family-names: "Shahedi"
+    orcid: "https://orcid.org/0009-0000-8543-1683"
+    affiliation: "Utrecht University"
+keywords:
+  - "explainable NLP"
+  - "XNLP"
+  - "interpretability"
+  - "natural language processing"
+  - "large language models"
+  - "mechanistic interpretability"
+  - "survey"
+  - "taxonomy"
+abstract: >-
+  Figures, figure-generation code, a machine-readable taxonomy, and the full
+  bibliography for a survey of explainable NLP that spans classical feature
+  attribution through LLM-era mechanistic interpretability. The survey
+  contributes a unified four-dimensional taxonomy of explanation methods
+  (scope, mechanism, model access, output form), practical decision
+  frameworks with worked examples, and a synthesis of chain-of-thought
+  faithfulness, self-explanation, sparse autoencoders, and circuit tracing.
+preferred-citation:
+  type: report
+  title: "Explainable NLP: A Comprehensive Survey and Practical Guidelines for Interpretable Text Models"
+  year: 2026
+  doi: 10.5281/zenodo.18521290
+  url: "https://doi.org/10.5281/zenodo.18521290"
+  notes: "Preprint on Zenodo. A substantially extended version, titled 'Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance', is under review at the Journal of Artificial Intelligence Research."
+  authors:
+    - given-names: "Hadi"
+      family-names: "Mohammadi"
+      orcid: "https://orcid.org/0000-0003-0860-9200"
+      affiliation: "Utrecht University"
+    - given-names: "Tina"
+      family-names: "Shahedi"
+      orcid: "https://orcid.org/0009-0000-8543-1683"
+      affiliation: "Utrecht University"
