@@ -3,8 +3,7 @@
 # Explainable NLP in the Era of Large Language Models
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21899962.svg)](https://doi.org/10.5281/zenodo.21899962)
-[![Preprint](https://img.shields.io/badge/Preprint-10.5281%2Fzenodo.18521290-blue.svg)](https://doi.org/10.5281/zenodo.18521290)
-[![Venue](https://img.shields.io/badge/JAIR-under%20review-blue.svg)](https://www.jair.org/)
+[![Preprint](https://img.shields.io/badge/Preprint%20v2.0-10.5281%2Fzenodo.23135151-blue.svg)](https://doi.org/10.5281/zenodo.23135151)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
 *A unified taxonomy, evaluation frameworks, and decision guidance for explainable NLP, from LIME to circuit tracing.*
@@ -17,20 +16,20 @@
 | ---------------- | ------------------------------------------------------------------------ |
 | **Title**        | Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance |
 | **Authors**      | Hadi Mohammadi, Tina Shahedi |
-| **Affiliation**  | Department of Methodology and Statistics, Utrecht University, The Netherlands |
-| **Venue**        | Journal of Artificial Intelligence Research (under review, submitted August 2026) |
-| **Preprint**     | [10.5281/zenodo.18521290](https://doi.org/10.5281/zenodo.18521290) (earlier and shorter version, Zenodo) |
+| **Affiliation**  | Department of Methodology, Statistics & Data Science, Utrecht University, The Netherlands |
+| **Preprint**     | [10.5281/zenodo.23135151](https://doi.org/10.5281/zenodo.23135151) (version 2.0, October 2026, Zenodo) |
+| **Earlier version** | [10.5281/zenodo.18521290](https://doi.org/10.5281/zenodo.18521290) (version 1.0, February 2026, shorter) |
 | **Materials archive** | [10.5281/zenodo.21899962](https://doi.org/10.5281/zenodo.21899962) (this repository) |
 
-The accepted version of the manuscript and its LaTeX source will be added here on publication.
+The preprint PDF is on Zenodo. The LaTeX source will be added here on publication.
 
 ## Abstract
 
-Explainable Artificial Intelligence (XAI) has become essential as natural language processing (NLP) models grow increasingly complex and are deployed in high-stakes domains. This survey provides a broad overview of explainability methods for NLP, spanning classical machine learning approaches through the latest developments in large language model (LLM) interpretability.
+Explanation methods for natural language processing (NLP) come from two literatures that rarely meet: feature attribution and probing for task models, and the interpretability of large language models (LLMs), from chain-of-thought reasoning to sparse autoencoder features and circuit tracing. We place both in a unified taxonomy with four dimensions: scope (local vs. global), mechanism (how the explanation is computed), model access (model-agnostic vs. model-specific), and output form (importance scores, rules, examples, counterfactuals, rationale spans, concepts, natural language).
 
-We make three main contributions: (1) a **unified taxonomy** of explanation methods for NLP organized by scope (local vs. global), mechanism (how the explanation is computed), model access (model-agnostic vs. model-specific), and output form (importance scores, rules, examples, counterfactuals, rationale spans, concepts, natural language); (2) **practical decision frameworks**: guidelines, decision trees, and worked examples for selecting methods by use case, model access, and audience; and (3) an updated synthesis of **LLM-era interpretability**, covering chain-of-thought and its faithfulness in reasoning models, self-explanation, and mechanistic interpretability from sparse autoencoders to circuit tracing.
+Faithfulness and plausibility come apart, and the erasure tests built for extracted rationales do not apply to a chain of thought, which is an output rather than part of the input, so chains of thought need intervention tests of their own. The access a deployment allows settles which mechanisms are usable before scope or audience matter; our practical decision frameworks start from that question and are traced through three worked deployments. In our synthesis of LLM-era interpretability, a lineage table shows that most current techniques rebuild or extend older ideas under new constraints of scale and access, while two problems are new: keeping reasoning traces monitorable under training pressure, and testing whether models can introspect. Faithfulness metrics disagree with one another, and sparse autoencoders do not yet beat simple baselines on standardized benchmarks, so evaluations should name the tests they ran instead of reporting one score.
 
-We review intrinsic and extrinsic evaluation approaches and current benchmarks, and survey applications across healthcare, legal and financial services, social science research, content moderation, and education. We identify key challenges, including faithfulness verification, the attention-explanation debate, and scaling interpretability to billion-parameter models, and outline promising future directions such as human-AI collaborative explanation and responsible deployment.
+We also survey applications across healthcare, legal and financial services, social science research, content moderation, and education, and close with six open problems.
 
 ## Key Contributions
 
@@ -87,17 +86,18 @@ The figures are deliberately grayscale with hatch patterns, so they stay legible
 
 ## Citation
 
-Until the journal version appears, please cite the Zenodo preprint:
+Until a journal version appears, please cite the preprint:
 
 ```bibtex
 @misc{mohammadi2026xnlp,
   author    = {Mohammadi, Hadi and Shahedi, Tina},
-  title     = {Explainable {NLP}: A Comprehensive Survey and Practical Guidelines for Interpretable Text Models},
+  title     = {Explainable {NLP} in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.18521290},
-  url       = {https://doi.org/10.5281/zenodo.18521290},
-  note      = {An extended version is under review at the Journal of Artificial Intelligence Research}
+  version   = {v2.0},
+  doi       = {10.5281/zenodo.23135151},
+  url       = {https://doi.org/10.5281/zenodo.23135151},
+  note      = {Preprint}
 }
 ```
 
