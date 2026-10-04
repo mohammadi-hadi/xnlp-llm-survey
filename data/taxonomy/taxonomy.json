@@ -1,7 +1,7 @@
 {
   "name": "A unified taxonomy of explanation methods for NLP",
-  "source": "Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance (Mohammadi and Shahedi, Utrecht University; under review at the Journal of Artificial Intelligence Research)",
-  "preprint_doi": "10.5281/zenodo.18521290",
+  "source": "Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance (Mohammadi and Shahedi, Utrecht University; preprint, doi:10.5281/zenodo.23135151)",
+  "preprint_doi": "10.5281/zenodo.23135151",
   "dimensions": [
     {
       "name": "scope",
