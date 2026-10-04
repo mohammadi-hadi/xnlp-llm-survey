@@ -35,14 +35,16 @@ We also survey applications across healthcare, legal and financial services, soc
 
 - **Unified taxonomy**: any explanation method is located along four dimensions, namely scope (local vs. global), mechanism (seven values, from perturbation to intrinsic), model access (model-agnostic vs. model-specific), and output form (seven values, from importance scores to natural language). Methods from LIME to circuit tracing sit in one frame and become comparable.
 - **Practical decision frameworks**: guidelines, decision trees, task-specific recommendations, and three worked examples that trace method selection end to end on concrete deployments.
-- **LLM-era synthesis**: chain-of-thought and its faithfulness in reasoning models, self-explanation, and mechanistic interpretability from sparse autoencoders to circuit tracing, current through mid-2026.
+- **LLM-era synthesis**: chain-of-thought and its faithfulness in reasoning models, self-explanation, and mechanistic interpretability from sparse autoencoders to circuit tracing, current through September 2026.
 - **Evaluation review**: intrinsic and extrinsic evaluation, current benchmarks, and applications across healthcare, legal and financial services, social science research, content moderation, and education.
 
 ## Key Findings
 
-1. **Faithfulness and plausibility come apart.** Plausibility is the easier of the two to obtain, so faithfulness verification belongs before deployment rather than after.
-2. **Access decides first.** Which methods are available at all is usually settled by the model access a deployment allows, so access is the first question in method selection rather than the last.
-3. **Old ideas under new constraints.** Read against the taxonomy, much of the LLM-era toolbox reinvents earlier ideas under tighter access constraints; the survey separates what is genuinely new from what is rebuilt.
+1. **Faithfulness and plausibility come apart, and the erasure tests do not transfer to a chain of thought.** A chain of thought is an output, so tests of it intervene on the trace.
+2. **Access settles which mechanisms are usable before scope or audience matter.** The decision trees start from the access a deployment allows.
+3. **Most LLM-era techniques rebuild or extend older ideas.** Ten of the twelve techniques in the lineage table have a classical counterpart; two problems are new: keeping reasoning traces monitorable, and testing introspection.
+4. **Faithfulness metrics disagree, and dictionary features do not yet beat simple baselines.** Evaluations should name the tests they ran.
+5. **Explanations raise acceptance of model outputs more reliably than they raise decision quality.** Extrinsic evaluation should measure the decisions people make.
 
 ## The Taxonomy at a Glance
 
@@ -62,13 +64,13 @@ xnlp-llm-survey/
 ├── LICENSE                    # CC BY 4.0
 ├── CITATION.cff               # Citation metadata
 ├── code/
-│   ├── create_figures.py      # Generates all five figures
+│   ├── create_figures.py      # Generates the figures (also draws three used only in earlier versions)
 │   └── requirements.txt       # Python dependencies (matplotlib, numpy)
 ├── data/
 │   └── taxonomy/
 │       └── taxonomy.json      # The four-dimensional taxonomy, machine readable
-├── figures/                   # The five figures of the survey (PDF vector + PNG)
-└── references.bib             # Full bibliography of the survey (216 entries)
+├── figures/                   # The two figures of the survey (PDF vector + PNG)
+└── references.bib             # Full bibliography of the survey (304 entries, 282 cited)
 ```
 
 Every entry in `references.bib` was verified against its authoritative source (ACL Anthology, DBLP, Crossref, OpenReview, PMLR, or the publisher) before inclusion.
