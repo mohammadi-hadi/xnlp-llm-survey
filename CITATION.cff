@@ -38,11 +38,12 @@ abstract: >-
   faithfulness, self-explanation, sparse autoencoders, and circuit tracing.
 preferred-citation:
   type: report
-  title: "Explainable NLP: A Comprehensive Survey and Practical Guidelines for Interpretable Text Models"
+  title: "Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance"
   year: 2026
-  doi: 10.5281/zenodo.18521290
-  url: "https://doi.org/10.5281/zenodo.18521290"
-  notes: "Preprint on Zenodo. A substantially extended version, titled 'Explainable NLP in the Era of Large Language Models: A Unified Taxonomy, Evaluation Frameworks, and Decision Guidance', is under review at the Journal of Artificial Intelligence Research."
+  version: "v2.0"
+  doi: 10.5281/zenodo.23135151
+  url: "https://doi.org/10.5281/zenodo.23135151"
+  notes: "Preprint on Zenodo, version 2.0 (October 2026). Version 1.0, an earlier and shorter version, is doi:10.5281/zenodo.18521290."
   authors:
     - given-names: "Hadi"
       family-names: "Mohammadi"
