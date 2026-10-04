@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate figures for XAI Survey Paper
-- Taxonomy of Explainable NLP Methods (hierarchical tree with elbow connectors)
+- Taxonomy of Explainable NLP Methods (mechanism x scope grid)
 - Method Selection Decision Tree (clean flowchart)
 - Explainability approaches overview and accuracy-interpretability schematic
 - Vector redraw of the traditional AI vs XAI comparison (ai_vs_xai_vector)
@@ -73,188 +73,171 @@ PATTERNS = {
 
 
 def create_taxonomy_diagram():
-    """Create flattened 2-level taxonomy diagram.
+    """Create the taxonomy as a mechanism (rows) x scope (columns) grid.
+
+    Every method shown appears in tab:method_classification of
+    sections/taxonomy.tex; keep the two in sync. LLM-era techniques get a
+    crosshatched frame (PATTERNS['llm']) and sit in the same cells as
+    classical methods, which is the point of the figure.
 
     Placed at \\textwidth (~6.3in). Canvas 11in wide -> scale ~0.57;
-    smallest font (12.5pt leaves/legend) prints at ~7.2pt.
+    smallest font (12.5pt chips/legend) prints at ~7.2pt.
     """
 
-    fig, ax = plt.subplots(figsize=(11, 7.2))
-    ax.set_xlim(0, 11)
-    ax.set_ylim(0, 7.2)
+    rows = [
+        ('Perturbation',
+         [('Occlusion/erasure', 0), ('SHAP', 0), ('Anchors', 0),
+          ('Counterfactuals', 0)],
+         [('SHAP (aggregated)', 0)]),
+        ('Gradient/\npropagation',
+         [('Gradients', 0), ('SmoothGrad', 0), ('Integrated Gradients', 0),
+          ('LRP', 0), ('DeepLIFT', 0), ('AttnLRP', 1),
+          ('Influence functions', 0)],
+         []),
+        ('Surrogate',
+         [('LIME', 0), ('ContextCite', 1)],
+         [('Distillation', 0)]),
+        ('Internal\ninspection',
+         [('Attention weights', 0), ('ALTI', 0), ('RNN hidden units', 0),
+          ('Tuned lens', 1)],
+         [('Probing classifiers', 0), ('TCAV', 0), ('SAE features', 1)]),
+        ('Intervention',
+         [('Value zeroing', 0), ('Activation patching', 1)],
+         [('Pruning analysis', 0), ('Activation patching', 1)]),
+        ('Prompting-\nbased',
+         [('Chain-of-thought', 1), ('Self-explanation', 1)],
+         []),
+        ('Intrinsic',
+         [('Extractive rationales', 0), ('Concept bottleneck', 0),
+          ('Faithful CoT', 1)],
+         [('Concept bottleneck', 0), ('Weight-sparse transformers', 1)]),
+    ]
+
+    W = 11.0
+    label_x0, label_x1 = 0.05, 1.95
+    local_x0, local_x1 = 2.05, 7.15
+    global_x0, global_x1 = 7.25, 10.95
+    chip_fs = 12.5
+    chip_gap = 0.22      # horizontal gap between chips (in)
+    line_h = 0.47        # height of one line of chips (in)
+    row_pad = 0.12       # vertical padding inside a row (in)
+    header_h = 0.62
+
+    # Measure chip widths once, in inches, on a scratch canvas.
+    scratch = plt.figure(figsize=(W, 4))
+    renderer = scratch.canvas.get_renderer()
+    widths = {}
+    for _, loc, glo in rows:
+        for lab, _ in loc + glo:
+            if lab not in widths:
+                t = scratch.text(0, 0, lab, fontsize=chip_fs)
+                widths[lab] = (t.get_window_extent(renderer).width
+                               / scratch.dpi) + 0.10   # bbox padding
+    plt.close(scratch)
+
+    def layout(items, x0, x1):
+        """Greedy line-wrapping. Returns [(label, llm, x_center, line)]."""
+        out, x, line = [], x0 + 0.12, 0
+        for lab, llm in items:
+            w = widths[lab]
+            if x + w > x1 - 0.08 and x > x0 + 0.12:
+                line += 1
+                x = x0 + 0.12
+            out.append((lab, llm, x + w / 2, line))
+            x += w + chip_gap
+        return out, (line + 1 if items else 1)
+
+    laid = []
+    for name, loc, glo in rows:
+        lo, nl = layout(loc, local_x0, local_x1)
+        go, ng = layout(glo, global_x0, global_x1)
+        laid.append((name, lo, go, max(nl, ng)))
+
+    grid_h = sum(n * line_h + 2 * row_pad for *_, n in laid)
+    legend_h = 0.75
+    H = header_h + grid_h + legend_h
+    fig = plt.figure(figsize=(W, H))
+    ax = fig.add_axes([0, 0, 1, 1])   # one data unit = one inch
+    ax.set_xlim(0, W)
+    ax.set_ylim(0, H)
     ax.axis('off')
 
-    def draw_background_region(x, width, color, pattern):
-        """Draw subtle background region with pattern for category grouping.
+    # Column headers
+    top = H - 0.05
+    for x0, x1, txt, cat in [
+            (local_x0, local_x1, 'Local (single prediction)', 'local'),
+            (global_x0, global_x1, 'Global (model-wide)', 'global')]:
+        ax.add_patch(FancyBboxPatch(
+            (x0, top - header_h + 0.10), x1 - x0, header_h - 0.16,
+            boxstyle='round,pad=0.02', facecolor=COLORS[f'{cat}_bg'],
+            edgecolor=COLORS[f'{cat}_border'], linewidth=1.6, zorder=2))
+        ax.text((x0 + x1) / 2, top - header_h / 2 + 0.02, txt,
+                ha='center', va='center', fontsize=13.5, fontweight='bold',
+                color=COLORS['text_primary'], zorder=3)
+    ax.text((label_x0 + label_x1) / 2, top - header_h / 2 + 0.02,
+            'Mechanism', ha='center', va='center', fontsize=13.5,
+            fontweight='bold', color=COLORS['text_primary'])
 
-        Two stacked rectangles: a low-alpha tint underneath, and a hatch-only
-        overlay on top. Matplotlib renders hatches in the patch edge color, so
-        the overlay needs a visible edgecolor (alpha would also fade the hatch,
-        hence full-alpha overlay with facecolor='none')."""
-        ax.add_patch(Rectangle(
-            (x, 0.55), width, 5.15,
-            facecolor=color, alpha=0.12, zorder=-2, edgecolor='none'))
-        ax.add_patch(Rectangle(
-            (x, 0.55), width, 5.15,
-            facecolor='none', zorder=-1, edgecolor='#C8C8C8',
-            linewidth=0.0, hatch=pattern))
+    def chip(x, y, lab, llm):
+        t = ax.text(x, y, lab, ha='center', va='center', fontsize=chip_fs,
+                    color=COLORS['text_primary'], zorder=5,
+                    bbox=dict(boxstyle='round,pad=0.22', facecolor='white',
+                              edgecolor='#4D4D4D' if llm else '#9E9E9E',
+                              linewidth=1.2 if llm else 0.8))
+        if llm:
+            w = widths[lab]
+            ax.add_patch(FancyBboxPatch(
+                (x - w / 2 - 0.07, y - 0.22), w + 0.14, 0.44,
+                boxstyle='round,pad=0.0', facecolor=COLORS['llm_bg'],
+                edgecolor=COLORS['llm_border'], hatch=PATTERNS['llm'],
+                linewidth=0.8, zorder=4))
+        return t
 
-    def draw_root(x, y, text):
-        """Draw root node with maximum prominence."""
-        box = FancyBboxPatch(
-            (x - 1.7, y - 0.33), 3.4, 0.66,
-            boxstyle="round,pad=0.15",
-            facecolor=COLORS['root'],
-            edgecolor='#37474F',
-            linewidth=2.0,
-            zorder=10
-        )
-        ax.add_patch(box)
-        ax.text(x, y, text, ha='center', va='center',
-                fontsize=15, fontweight='bold', color='white', zorder=11)
-        return {'center': (x, y), 'bottom': (x, y - 0.42), 'top': (x, y + 0.42)}
-
-    def draw_category(x, y, text, category):
-        """Draw category box with colored background and near-black text
-        (all headers use dark text for contrast on the light fills)."""
-        box = FancyBboxPatch(
-            (x - 1.55, y - 0.38), 3.1, 0.76,
-            boxstyle="round,pad=0.12",
-            facecolor=COLORS[f'{category}_bg'],
-            edgecolor=COLORS[f'{category}_border'],
-            linewidth=2.0,
-            zorder=8
-        )
-        ax.add_patch(box)
-        ax.text(x, y, text, ha='center', va='center',
+    # Rows
+    y = top - header_h
+    for k, (name, lo, go, n) in enumerate(laid):
+        h = n * line_h + 2 * row_pad
+        y0 = y - h
+        shade = '#F4F4F4' if k % 2 == 0 else 'white'
+        ax.add_patch(Rectangle((label_x0, y0), global_x1 - label_x0, h,
+                               facecolor=shade, edgecolor='none', zorder=0))
+        ax.plot([label_x0, global_x1], [y0, y0], color='#BDBDBD',
+                linewidth=0.8, zorder=1)
+        ax.text(label_x0 + 0.10, y0 + h / 2, name, ha='left', va='center',
                 fontsize=13, fontweight='bold',
-                color=COLORS['text_primary'], zorder=9)
-        return {'center': (x, y), 'bottom': (x, y - 0.46), 'top': (x, y + 0.46)}
+                color=COLORS['text_primary'], zorder=3)
+        for items in (lo, go):
+            for lab, llm, xc, line in items:
+                yc = y - row_pad - line_h / 2 - line * line_h
+                chip(xc, yc, lab, llm)
+        if not go:
+            ax.text((global_x0 + global_x1) / 2, y0 + h / 2, '(none)',
+                    ha='center', va='center', fontsize=12.5,
+                    color='#757575', style='italic', zorder=3)
+        y = y0
 
-    def draw_method(x, y, text):
-        """Draw method as text with an OPAQUE white background box so column
-        spines can pass behind labels without striking the text."""
-        ax.text(x, y, text, ha='center', va='center',
-                fontsize=12.5, fontweight='normal',
-                color=COLORS['text_primary'],
-                bbox=dict(boxstyle='round,pad=0.22',
-                         facecolor='white',
-                         edgecolor='#BDBDBD',
-                         linewidth=0.8,
-                         alpha=1.0),
-                zorder=4)
-        return {'center': (x, y), 'top': (x, y + 0.2)}
+    # Column separators
+    for x in (local_x0 - 0.05, global_x0 - 0.05):
+        ax.plot([x, x], [y, top - header_h], color='#9E9E9E',
+                linewidth=1.0, zorder=1)
+    ax.plot([label_x0, global_x1], [top - header_h, top - header_h],
+            color='#4D4D4D', linewidth=1.4, zorder=1)
 
-    def draw_column_tree(parent_bottom, columns, color, lw=1.6):
-        """Connect a category to columns of stacked leaves.
-
-        One vertical from the parent to a horizontal bar, then ONE vertical
-        spine per column drawn from the bar down to the lowest leaf, BEHIND
-        the opaque leaf label boxes (zorder 1 < 4). No connector ever crosses
-        visible text.
-        columns: list of (x, y_top_leaf, y_bottom_leaf).
-        """
-        bar_y = parent_bottom[1] - 0.28
-        ax.plot([parent_bottom[0], parent_bottom[0]], [parent_bottom[1], bar_y],
-                color=color, linewidth=lw, zorder=1)
-        xs = [c[0] for c in columns]
-        if len(xs) > 1:
-            ax.plot([min(xs), max(xs)], [bar_y, bar_y], color=color,
-                    linewidth=lw, zorder=1)
-        for x, y_top, y_bottom in columns:
-            ax.plot([x, x], [bar_y, y_bottom], color=color, linewidth=lw,
-                    zorder=1)
-
-    # === Background regions for each category ===
-    draw_background_region(0.20, 3.45, COLORS['local_bg'], PATTERNS['local'])
-    draw_background_region(3.80, 3.40, COLORS['global_bg'], PATTERNS['global'])
-    draw_background_region(7.35, 3.45, COLORS['llm_bg'], PATTERNS['llm'])
-
-    # === Root node ===
-    root = draw_root(5.5, 6.6, 'Explainable NLP Methods')
-
-    # === Level 1: Categories ===
-    cat_y = 5.15
-    local_cat = draw_category(1.93, cat_y, 'Local Explanations\n(Single Prediction)', 'local')
-    global_cat = draw_category(5.5, cat_y, 'Global Explanations\n(Model-Wide)', 'global')
-    llm_cat = draw_category(9.07, cat_y, 'LLM-Era Methods', 'llm')
-
-    # Connect root to categories
-    bar_y = root['bottom'][1] - 0.28
-    ax.plot([5.5, 5.5], [root['bottom'][1], bar_y], color=COLORS['connector'],
-            linewidth=2.0, zorder=1)
-    ax.plot([1.93, 9.07], [bar_y, bar_y], color=COLORS['connector'],
-            linewidth=2.0, zorder=1)
-    for cx, cat in [(1.93, local_cat), (5.5, global_cat), (9.07, llm_cat)]:
-        ax.plot([cx, cx], [bar_y, cat['top'][1]], color=COLORS['connector'],
-                linewidth=2.0, zorder=1)
-
-    # === Level 2: Methods (stacked columns; spine drawn behind labels) ===
-    # Local: two columns of six
-    local_col1_x, local_col2_x = 1.1, 2.85
-    col1_rows = [3.95, 3.35, 2.75, 2.15, 1.55, 0.95]
-    col1_labels = ['LIME', 'SHAP', 'Anchors', 'LRP', 'DeepLIFT', 'Counterfactual']
-    col2_rows = [3.95, 3.30, 2.65, 2.00, 1.42, 0.95]
-    col2_labels = ['Integrated\nGradients', 'Attention\nWeights',
-                   'Attention\nRollout', 'Influence\nFunctions',
-                   'Prototypes', 'Contrastive']
-    for y, lab in zip(col1_rows, col1_labels):
-        draw_method(local_col1_x, y, lab)
-    for y, lab in zip(col2_rows, col2_labels):
-        draw_method(local_col2_x, y, lab)
-    draw_column_tree(local_cat['bottom'],
-                     [(local_col1_x, col1_rows[0], col1_rows[-1]),
-                      (local_col2_x, col2_rows[0], col2_rows[-1])],
-                     color=COLORS['local'], lw=1.6)
-
-    # Global: one column of four
-    global_x = 5.5
-    global_rows = [3.85, 3.1, 2.35, 1.6]
-    global_labels = ['Rule Extraction', 'SHAP (Global)', 'TCAV',
-                     'Probing Classifiers']
-    for y, lab in zip(global_rows, global_labels):
-        draw_method(global_x, y, lab)
-    draw_column_tree(global_cat['bottom'],
-                     [(global_x, global_rows[0], global_rows[-1])],
-                     color=COLORS['global'], lw=1.6)
-
-    # LLM-Era: two columns of three
-    llm_col1_x, llm_col2_x = 8.2, 9.95
-    llm_rows = [3.85, 3.1, 2.35]
-    llm_col1_labels = ['Chain-of-Thought\n(Zero- / Few-shot)', 'Self-Critique',
-                       'Rationale\nGeneration']
-    llm_col2_labels = ['Activation\nPatching', 'SAE Features',
-                       'Circuit\nTracing']
-    for y, lab in zip(llm_rows, llm_col1_labels):
-        draw_method(llm_col1_x, y, lab)
-    for y, lab in zip(llm_rows, llm_col2_labels):
-        draw_method(llm_col2_x, y, lab)
-    draw_column_tree(llm_cat['bottom'],
-                     [(llm_col1_x, llm_rows[0], llm_rows[-1]),
-                      (llm_col2_x, llm_rows[0], llm_rows[-1])],
-                     color=COLORS['llm'], lw=1.6)
-
-    # === Legend with patterns (top-left corner is empty) ===
+    # Legend
     legend_elements = [
-        mpatches.Patch(facecolor=COLORS['local_bg'],
-                      edgecolor=COLORS['local_border'],
-                      hatch=PATTERNS['local'],
-                      label='Local Methods'),
-        mpatches.Patch(facecolor=COLORS['global_bg'],
-                      edgecolor=COLORS['global_border'],
-                      hatch=PATTERNS['global'],
-                      label='Global Methods'),
+        mpatches.Patch(facecolor='white', edgecolor='#9E9E9E',
+                       label='Classical method'),
         mpatches.Patch(facecolor=COLORS['llm_bg'],
-                      edgecolor=COLORS['llm_border'],
-                      hatch=PATTERNS['llm'],
-                      label='LLM-Era Methods'),
+                       edgecolor=COLORS['llm_border'],
+                       hatch=PATTERNS['llm'],
+                       label='LLM-era technique'),
     ]
-    ax.legend(handles=legend_elements, loc='upper left',
-              fontsize=12.5, framealpha=0.95, edgecolor='#2C3E50')
+    ax.legend(handles=legend_elements, loc='lower center', ncol=2,
+              bbox_to_anchor=(0.5, 0.0), fontsize=12.5, framealpha=0.95,
+              edgecolor='#2C3E50')
 
-    # No baked-in caption: the LaTeX \caption provides figure numbering and text.
+    # No baked-in caption: the LaTeX \\caption provides figure numbering and text.
 
-    plt.tight_layout()
     plt.savefig('taxonomy_diagram.pdf', format='pdf', bbox_inches='tight')
     plt.savefig('taxonomy_diagram.png', format='png', bbox_inches='tight')
     print("Created: taxonomy_diagram.pdf and .png")
@@ -366,7 +349,7 @@ def create_decision_tree():
     draw_elbow_arrow(d1['left'], 2.29, d2_full['top'], 'Full Access', 'start')
 
     # Local methods (Full Access) - white fill, solid thick border
-    r_local = draw_rect(1.15, 3.1, 'Integrated Gradients\nAttention\nSHAP',
+    r_local = draw_rect(1.15, 3.1, 'Integrated Gradients\nContext Mixing\nSHAP',
                         color='#FFFFFF', width=2.1, height=1.05, linestyle='-', linewidth=3.0)
     draw_elbow_arrow(d2_full['left'], 1.15, r_local['top'], 'Local', 'start')
 
@@ -380,14 +363,14 @@ def create_decision_tree():
     draw_arrow(d1['bottom'], d2_api['top'], 'API Only', label_offset=(0.78, 0.02))
 
     # LLM Yes - medium gray fill, dotted border
-    r_llm_yes = draw_rect(5.42, 3.1, 'Chain-of-Thought\nSelf-Explanation',
+    r_llm_yes = draw_rect(5.42, 3.1, 'SHAP / LIME\n+ CoT',
                           color='#E8E8E8', width=1.75, height=0.85, linestyle=':', linewidth=2.5)
     draw_elbow_arrow(d2_api['left'], 5.42, r_llm_yes['top'], 'Yes', 'start')
 
     # Caveat note for reasoning models: CoT traces are not guaranteed faithful
     ax.plot([5.42, 5.42], [r_llm_yes['bottom'][1], 2.35], color=COLORS['arrow'],
             lw=1.2, linestyle=':', zorder=5)
-    ax.text(5.42, 2.0, 'Reasoning model? Verify CoT\nfaithfulness before use',
+    ax.text(5.42, 2.0, 'Test CoT faithfulness\nbefore relying on it',
             ha='center', va='center', fontsize=12.5, fontstyle='italic',
             color='#1A1A1A',
             bbox=dict(boxstyle='round,pad=0.25', facecolor='#FFFFFF',
@@ -425,7 +408,7 @@ def create_decision_tree():
     audiences = [
         (1.55, 'End Users', 'Simple highlights\nNatural language', '#D0D0D0'),
         (4.3, 'Domain Experts', 'Feature importance\nDomain terms', '#A0A0A0'),
-        (7.05, 'ML Practitioners', 'Gradients\nAttention maps', '#707070'),
+        (7.05, 'ML Practitioners', 'Gradients\nContext-mixing maps', '#707070'),
         (9.8, 'Regulators', 'Auditable\nMethodology', '#505050'),
     ]
 
