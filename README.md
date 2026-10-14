@@ -18,6 +18,7 @@
 | **Authors**      | Hadi Mohammadi, Tina Shahedi |
 | **Affiliation**  | Department of Methodology, Statistics & Data Science, Utrecht University, The Netherlands |
 | **Preprint**     | [10.5281/zenodo.23135151](https://doi.org/10.5281/zenodo.23135151) (version 2.0, October 2026, Zenodo) |
+| **Preprints.org** | [10.20944/preprints202610.0435.v1](https://doi.org/10.20944/preprints202610.0435.v1) (October 2026) |
 | **Earlier version** | [10.5281/zenodo.18521290](https://doi.org/10.5281/zenodo.18521290) (version 1.0, February 2026, shorter) |
 | **Materials archive** | [10.5281/zenodo.21899962](https://doi.org/10.5281/zenodo.21899962) (this repository) |
 
